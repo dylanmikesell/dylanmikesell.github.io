@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 title: Under construction (August 2024) # the website title (if blank, full name will be used instead)
-first_name: T. 
+first_name: T.
 middle_name: Dylan
 last_name: Mikesell
 email: # dylan.mikesell@ngi.no
@@ -113,7 +113,6 @@ zotero_username: # your zotero username
 
 contact_note: >
 # Please email if you need to contact me.
-
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
@@ -319,7 +318,7 @@ scholar:
   locale: en
 
   source: /_bibliography/
-  bibliography: papers.bib
+  bibliography: Mikesell-peer-reviewed.bib # papers.bib
   bibliography_template: bib
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
