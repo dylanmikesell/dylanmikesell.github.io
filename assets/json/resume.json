@@ -19,11 +19,31 @@
     {
       "name": "Norwegian Geotechnical Institute",
       "position": "Senior Specialist",
-      "url": "https://example.com",
+      "url": "https://www.ngi.no/en",
       "startDate": "2021-08-01",
       "endDate": "present",
-      "summary": "",
+      "summary": "Working in the Remote Sensing and Geophysics Section in the Natural Hazards Market Area",
+      "highlights": ["Geophysics, Seismology"]
+    },
+    {
+      "name": "Boise State University",
+      "position": "Associate Professor",
+      "url": "https://www.boisestate.edu/eslab/",
+      "startDate": "2019-07-01",
+      "endDate": "2022-04-01",
+      "summary": "Director, Environmental Seismology Lab",
       "highlights": ["Geophysics, Seismology"]
     }
+    ,
+    {
+      "name": "Boise State University",
+      "position": "Assistant Professor",
+      "url": "https://www.boisestate.edu/eslab/",
+      "startDate": "2015-07-15",
+      "endDate": "2019-07-01",
+      "summary": "Director, Environmental Seismology Lab",
+      "highlights": ["Geophysics, Seismology"]
+    }
+    
   ]
 }
