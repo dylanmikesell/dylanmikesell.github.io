@@ -65,3 +65,7 @@ analytics-secrets.*
 # Backup files
 *.bak
 *.backup
+
+# Miscellaneous
+SETUP_LOG.md
+dylanmikesell.github.io.code-workspace
