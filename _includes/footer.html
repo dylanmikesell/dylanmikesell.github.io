@@ -1,0 +1,286 @@
+<!-- Footer - Contact Links and Academic Profile Integration -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-content">
+      
+      <!-- Contact Information -->
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <div class="contact-info">
+          {% if site.email %}
+          <p>
+            <a href="mailto:{{ site.email }}" class="contact-link">
+              <span class="sr-only">Email: </span>
+              {{ site.email }}
+            </a>
+          </p>
+          {% endif %}
+          
+          {% if site.data.contact.phone %}
+          <p>
+            <a href="tel:{{ site.data.contact.phone }}" class="contact-link">
+              <span class="sr-only">Phone: </span>
+              {{ site.data.contact.phone }}
+            </a>
+          </p>
+          {% endif %}
+          
+          {% if site.data.contact.office %}
+          <p class="office-location">
+            <span class="sr-only">Office: </span>
+            {{ site.data.contact.office }}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Academic Profiles -->
+      <div class="footer-section">
+        <h3>Academic Profiles</h3>
+        <div class="academic-links">
+          {% if site.orcid %}
+          <a href="https://orcid.org/{{ site.orcid }}" 
+             class="academic-link"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="ORCID Profile (opens in new window)">
+            <span class="link-icon" aria-hidden="true">🔗</span>
+            ORCID
+          </a>
+          {% endif %}
+          
+          {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}" 
+             class="academic-link"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="GitHub Profile (opens in new window)">
+            <span class="link-icon" aria-hidden="true">💻</span>
+            GitHub
+          </a>
+          {% endif %}
+          
+          {% if site.data.profile.google_scholar %}
+          <a href="{{ site.data.profile.google_scholar }}" 
+             class="academic-link"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Google Scholar Profile (opens in new window)">
+            <span class="link-icon" aria-hidden="true">📚</span>
+            Google Scholar
+          </a>
+          {% endif %}
+          
+          {% if site.data.profile.researchgate %}
+          <a href="{{ site.data.profile.researchgate }}" 
+             class="academic-link"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="ResearchGate Profile (opens in new window)">
+            <span class="link-icon" aria-hidden="true">🔬</span>
+            ResearchGate
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <ul class="footer-links">
+            <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+            <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+            <li><a href="{{ '/students/' | relative_url }}">Students</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+            {% if site.data.files.cv %}
+            <li>
+              <a href="{{ site.data.files.cv | relative_url }}" 
+                 target="_blank"
+                 rel="noopener"
+                 aria-label="Download CV (PDF, opens in new window)">
+                CV (PDF)
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Copyright and Site Info -->
+    <div class="footer-bottom">
+      <div class="footer-meta">
+        <p class="copyright">
+          &copy; {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}. 
+          All rights reserved.
+        </p>
+        
+        <p class="site-info">
+          Built with <a href="https://jekyllrb.com/" 
+                       target="_blank" 
+                       rel="noopener"
+                       aria-label="Jekyll (opens in new window)">Jekyll</a> 
+          and hosted on <a href="https://pages.github.com/" 
+                          target="_blank" 
+                          rel="noopener"
+                          aria-label="GitHub Pages (opens in new window)">GitHub Pages</a>.
+        </p>
+        
+        {% if site.data.accessibility %}
+        <p class="accessibility-statement">
+          <a href="{{ '/accessibility/' | relative_url }}">Accessibility Statement</a>
+        </p>
+        {% endif %}
+      </div>
+      
+      <!-- Last Updated -->
+      <p class="last-updated">
+        <small>Last updated: {{ site.time | date: "%B %d, %Y" }}</small>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* Footer-specific styles */
+.site-footer {
+  background-color: var(--color-background-alt);
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 640px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-section h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.contact-info p,
+.academic-links,
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-link,
+.academic-link {
+  color: var(--color-link);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+  
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+}
+
+.academic-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.academic-link {
+  min-height: 44px; // Touch target
+  display: flex;
+  align-items: center;
+}
+
+.link-icon {
+  font-size: var(--font-size-lg);
+  width: 24px;
+  display: inline-block;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer-links a {
+  color: var(--color-link);
+  text-decoration: none;
+  min-height: 44px; // Touch target
+  display: flex;
+  align-items: center;
+  
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.footer-meta p {
+  margin: 0;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+.footer-meta a {
+  color: var(--color-link);
+  
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+  }
+}
+
+.last-updated {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  text-align: right;
+  
+  @media (max-width: 767px) {
+    text-align: left;
+  }
+}
+
+.office-location {
+  color: var(--color-text-light);
+}
+</style>

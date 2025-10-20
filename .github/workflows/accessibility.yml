@@ -1,0 +1,58 @@
+# Accessibility Testing - WCAG 2.1 AA Compliance
+# Constitutional Requirement: Full accessibility compliance
+
+name: Accessibility Testing
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install axe-core CLI
+        run: npm install -g @axe-core/cli
+        
+      - name: Wait for deployment
+        uses: lewagon/wait-on-check-action@v1.3.1
+        if: github.event_name == 'push'
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'deploy'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+          
+      - name: Run axe accessibility tests
+        run: |
+          echo "Testing WCAG 2.1 AA compliance..."
+          axe https://dylanmikesell.github.io --exit
+          axe https://dylanmikesell.github.io/about/ --exit
+          axe https://dylanmikesell.github.io/research/ --exit
+          axe https://dylanmikesell.github.io/contact/ --exit
+          
+      - name: Mobile Accessibility Test
+        run: |
+          echo "Testing mobile accessibility..."
+          axe https://dylanmikesell.github.io --viewport 375x667 --exit
+          
+      - name: Color Contrast Test
+        run: |
+          echo "Testing color contrast compliance..."
+          axe https://dylanmikesell.github.io --tags="color-contrast" --exit
+          
+      - name: Keyboard Navigation Test  
+        run: |
+          echo "Testing keyboard navigation..."
+          axe https://dylanmikesell.github.io --tags="keyboard" --exit

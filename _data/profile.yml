@@ -1,0 +1,89 @@
+# Professional Profile Data - Research Identity and Bio
+# Constitutional Requirements: Professional Focus, Content-Driven Development
+
+# Core Identity
+name: "Dylan Mikesell"
+title: "Research Geophysicist"
+affiliation: "Boise State University"
+department: "Geosciences Department"
+position: "Assistant Professor"
+
+# Research Identity
+research_interests:
+  - "Seismic wave propagation and imaging"
+  - "Ambient noise monitoring and analysis"
+  - "Geophysical signal processing"
+  - "Volcano seismology"
+  - "Environmental seismology"
+
+expertise_areas:
+  - "Seismic interferometry"
+  - "Array processing"
+  - "Time series analysis"
+  - "Machine learning for geophysics"
+  - "Field instrumentation"
+  - "Data visualization"
+
+# Bio Summary (Professional Overview)
+bio_summary: |
+  Dylan Mikesell is a research geophysicist specializing in seismic wave propagation, 
+  ambient noise analysis, and geophysical signal processing. His research focuses on 
+  developing innovative methods for monitoring subsurface changes using continuous 
+  seismic recordings and advanced signal processing techniques.
+  
+  Currently an Assistant Professor in the Geosciences Department at Boise State University, 
+  Dylan's work bridges fundamental seismology with practical applications in environmental 
+  monitoring, volcanic surveillance, and subsurface characterization. His research group 
+  develops computational tools and field methodologies that advance our understanding 
+  of Earth's dynamic processes.
+
+bio_extended: |
+  Dr. Mikesell's research program focuses on extracting maximum information from seismic 
+  recordings to understand Earth's structure and monitor temporal changes. His work spans 
+  from developing theoretical frameworks for seismic interferometry to deploying field 
+  experiments for volcano monitoring and environmental seismology applications.
+  
+  His innovative approaches to ambient noise analysis have contributed to advances in 
+  subsurface imaging and monitoring capabilities. Dylan is particularly interested in 
+  the application of machine learning techniques to geophysical data analysis and the 
+  development of real-time monitoring systems for natural hazards.
+
+# Contact and Location
+location: "Boise, Idaho, USA"
+office: "Building Name, Room Number" # Update with actual office
+timezone: "America/Denver"
+
+# Professional Photo
+profile_image: "/assets/images/profile/dylan-mikesell.jpg"
+profile_image_alt: "Dylan Mikesell, Research Geophysicist"
+
+# Academic Identifiers
+orcid: "0000-0001-9900-9846" # Replace with actual ORCID
+google_scholar: "https://scholar.google.com/citations?user=oy-AAHIAAAAJ&hl=en"
+researchgate: "https://www.researchgate.net/profile/Thomas-Mikesell?ev=hdr_xprf"
+
+# Current Projects Highlight
+current_focus:
+  - title: "Ambient Noise Monitoring"
+    description: "Developing real-time monitoring systems using ambient seismic noise"
+  - title: "Volcano Seismology"
+    description: "Advancing volcanic hazard assessment through innovative seismic analysis"
+  - title: "Machine Learning Applications"
+    description: "Applying ML techniques to geophysical data interpretation"
+
+# Research Philosophy
+research_philosophy: |
+  Advancing geophysical understanding through innovative signal processing, 
+  rigorous field work, and collaborative research that bridges theory and practice.
+
+# Key Achievements (Brief)
+key_achievements:
+  - "Developed novel seismic interferometry methods"
+  - "Published research in leading geophysics journals"
+  - "Active in international geophysics community"
+  - "Mentored students in computational geophysics"
+
+# Professional Status
+status: "active" # active, emeritus, visiting
+availability: "accepting_students" # accepting_students, not_accepting, limited
+last_updated: "2025-01-20"

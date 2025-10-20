@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<article class="home-content" itemscope itemtype="https://schema.org/ProfilePage">
+  <!-- Hero Section -->
+  <section class="hero" role="banner">
+    <div class="container">
+      <div class="hero-content">
+        {% include profile-summary.html %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="home-body">
+    <div class="container">
+      <div class="content" itemprop="mainContentOfPage">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Expertise Preview -->
+  {% if site.data.expertise %}
+  <section class="expertise-preview" aria-labelledby="expertise-heading">
+    <div class="container">
+      <h2 id="expertise-heading">Research Areas</h2>
+      {% include expertise-list.html limit=6 %}
+      <div class="text-center">
+        <a href="{{ '/research/' | relative_url }}" class="btn btn-outline">
+          View All Research
+          <span class="sr-only">areas and projects</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Recent Updates -->
+  {% if site.posts.size > 0 %}
+  <section class="recent-updates" aria-labelledby="updates-heading">
+    <div class="container">
+      <h2 id="updates-heading">Recent Updates</h2>
+      <div class="posts-grid">
+        {% for post in site.posts limit:3 %}
+        <article class="post-card">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</article>

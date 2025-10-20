@@ -1,0 +1,65 @@
+{
+  "last_updated": "2025-10-20T06:17:36Z",
+  "featured": [
+    {
+      "title": "Atmospheric waves and global seismoacoustic observations of the January 2022 Hunga eruption, Tonga",
+      "authors": "Matoza, Robin S., Fee, David, Assink, Jelle D., Iezzi, Alexandra M., Green, David N., Kim, Keehoon, Toney, Liam, Lecocq, Thomas, Krishnamoorthy, Siddharth, Lalande, Jean-Marie, Nishida, Kiwamu, Gee, Kent L., Haney, Matthew M., Ortiz, Hugo D., Brissaud, Quentin, Martire, Léo, Rolland, Lucie, Vergados, Panagiotis, Nippress, Alexandra, Park, Junghyun, Shani-Kadmiel, Shahar, Witsil, Alex, Arrowsmith, Stephen, Caudron, Corentin, Watada, Shingo, Perttu, Anna B., Taisne, Benoit, Mialle, Pierrick, Le Pichon, Alexis, Vergoz, Julien, Hupe, Patrick, Blom, Philip S., Waxler, Roger, De Angelis, Silvio, Snively, Jonathan B., Ringler, Adam T., Anthony, Robert E., Jolly, Arthur D., Kilgour, Geoff, Averbuch, Gil, Ripepe, Maurizio, Ichihara, Mie, Arciniega-Ceballos, Alejandra, Astafyeva, Elvira, Ceranna, Lars, Cevuard, Sandrine, Che, Il-Young, De Negri, Rodrigo, Ebeling, Carl W., Evers, Läslo G., Franco-Marin, Luis E., Gabrielson, Thomas B., Hafner, Katrin, Harrison, R. Giles, Komjathy, Attila, Lacanna, Giorgio, Lyons, John, Macpherson, Kenneth A., Marchetti, Emanuele, McKee, Kathleen F., Mellors, Robert J., Mendo-Pérez, Gerardo, Mikesell, T. Dylan, Munaibari, Edhah, Oyola-Merced, Mayra, Park, Iseul, Pilger, Christoph, Ramos, Cristina, Ruiz, Mario C., Sabatini, Roberto, Schwaiger, Hans F., Tailpied, Dorianne, Talmadge, Carrick, Vidot, Jérôme, Webster, Jeremy, Wilson, David C.",
+      "venue": "Science",
+      "year": "2022",
+      "citations": 223,
+      "doi": "10.1126/science.abo7063",
+      "abstract": "The 15 January 2022 climactic eruption of Hunga volcano, Tonga, produced an explosion in the atmosphere of a size that has not been documented in the modern geophysical record. The event generated a broad range of atmospheric waves observed globally by various ground-based and spaceborne instrumentation networks. Most prominent was the surface-guided Lamb wave (≲0.01 hertz), which we observed propagating for four (plus three antipodal) passages around Earth over 6 days. As measured by the Lamb wave amplitudes, the climactic Hunga explosion was comparable in size to that of the 1883 Krakatau eruption. The Hunga eruption produced remarkable globally detected infrasound (0.01 to 20 hertz), long-range (~10,000 kilometers) audible sound, and ionospheric perturbations. Seismometers worldwide recorded pure seismic and air-to-ground coupled waves. Air-to-sea coupling likely contributed to fast-arriving tsunamis. Here, we highlight exceptional observations of the atmospheric waves.",
+      "keywords": "",
+      "type": "article",
+      "bibcode": "2022Sci...377...95M"
+    },
+    {
+      "title": "The 15 January 2022 Hunga Tonga Eruption History as Inferred From Ionospheric Observations",
+      "authors": "Astafyeva, E., Maletckii, B., Mikesell, T. D., Munaibari, E., Ravanelli, M., Coisson, P., Manta, F., Rolland, L.",
+      "venue": "Geophysical Research Letters",
+      "year": "2022",
+      "citations": 115,
+      "doi": "10.1029/2022GL098827",
+      "abstract": "On 15 January 2022, the Hunga Tonga-Hunga Ha'apai submarine volcano erupted violently and triggered a giant atmospheric shock wave and tsunami. The exact mechanism of this extraordinary eruptive event, its size and magnitude are not well understood yet. In this work, we analyze data from the nearest ground-based receivers of Global Navigation Satellite System to explore the ionospheric total electron content (TEC) response to this event. We show that the ionospheric response consists of a giant TEC increase followed by a strong long-lasting depletion. We observe that the explosive event of 15 January 2022 began at 04:05:54UT and consisted of at least five explosions. Based on the ionospheric TEC data, we estimate the energy released during the main major explosion to be between 9 and 37 Megatons in trinitrotoluene equivalent. This is the first detailed analysis of the eruption sequence scenario and the timeline from ionospheric TEC observations.",
+      "keywords": "Hunga Tonga eruption, ionosphere, GNSS, eruption timeline, co-volcanic ionospheric disturbances, ionospheric geodesy",
+      "type": "article",
+      "bibcode": "2022GeoRL..4998827A"
+    },
+    {
+      "title": "Extension of the spatial autocorrelation (SPAC) method to mixed-component correlations of surface waves",
+      "authors": "Haney, Matthew M., Mikesell, T. Dylan, van Wijk, Kasper, Nakahara, Hisashi",
+      "venue": "Geophysical Journal International",
+      "year": "2012",
+      "citations": 68,
+      "doi": "10.1111/j.1365-246X.2012.05597.x",
+      "abstract": "Using ambient seismic noise for imaging subsurface structure dates back to the development of the spatial autocorrelation (SPAC) method in the 1950s. We present a theoretical analysis of the SPAC method for multicomponent recordings of surface waves to determine the complete 3 × 3 matrix of correlations between all pairs of three-component motions, called the correlation matrix. In the case of isotropic incidence, when either Rayleigh or Love waves arrive from all directions with equal power, the only non-zero off-diagonal terms in the matrix are the vertical-radial (ZR) and radial-vertical (RZ) correlations in the presence of Rayleigh waves. Such combinations were not considered in the development of the SPAC method. The method originally addressed the vertical-vertical (ZZ), RR and TT correlations, hence the name spatial autocorrelation. The theoretical expressions we derive for the ZR and RZ correlations offer additional ways to measure Rayleigh wave dispersion within the SPAC framework. <P />Expanding on the results for isotropic incidence, we derive the complete correlation matrix in the case of generally anisotropic incidence. We show that the ZR and RZ correlations have advantageous properties in the presence of an out-of-plane directional wavefield compared to ZZ and RR correlations. We apply the results for mixed-component correlations to a data set from Akutan Volcano, Alaska and find consistent estimates of Rayleigh wave phase velocity from ZR compared to ZZ correlations. This work together with the recently discovered connections between the SPAC method and time-domain correlations of ambient noise provide further insights into the retrieval of surface wave Green's functions from seismic noise.",
+      "keywords": "Time series analysis, Interferometry, Surface waves and free oscillations, Theoretical seismology, Wave propagation",
+      "type": "article",
+      "bibcode": "2012GeoJI.191..189H"
+    },
+    {
+      "title": "Continuous profiles of electromagnetic wave velocity and water content in glaciers: an example from Bench Glacier, Alaska, USA",
+      "authors": "Bradford, John H., Nichols, Joshua, Mikesell, T. Dylan, Harper, Joel T.",
+      "venue": "Annals of Glaciology",
+      "year": "2009",
+      "citations": 64,
+      "doi": "10.3189/172756409789097540",
+      "abstract": "We conducted two-dimensional continuous multi-offset georadar surveys on Bench Glacier, south-central Alaska, USA, to measure the distribution of englacial water. We acquired data with a multichannel 25 MHz radar system using transmitter-receiver offsets ranging from 5 to 150 m. We towed the radar system at 5-10 kmh-1 with a snow machine with transmitter/receiver positions established by geodetic-grade kinematic differentially corrected GPS (nominal 0.5 m trace spacing). For radar velocity analyses, we employed reflection tomography in the pre-stack depth-migrated domain to attain an estimated 2% velocity uncertainty when averaged over three to five wavelengths. We estimated water content from the velocity structure using the complex refractive index method equation and use a three-phase model (ice, water, air) that accounts for compression of air bubbles as a function of depth. Our analysis produced laterally continuous profiles of glacier water content over several kilometers. These profiles show a laterally variable, stratified velocity structure with a low-water-content (~0-0.5%) shallow layer (~20-30 m) underlain by high-water-content (1-2.5%) ice.",
+      "keywords": "",
+      "type": "article",
+      "bibcode": "2009AnGla..50....1B"
+    },
+    {
+      "title": "The virtual refraction: Useful spurious energy in seismic interferometry",
+      "authors": "Mikesell, Dylan, van Wijk, Kasper, Calvert, Alexander, Haney, Matt",
+      "venue": "Geophysics",
+      "year": "2009",
+      "citations": 56,
+      "doi": "10.1190/1.3095659",
+      "abstract": "Seismic interferometry is rapidly becoming an established technique to recover the Green's function between receivers, but practical limitations in the source-energy distribution inevitably lead to spurious energy in the results. Instead of attempting to suppress all such energy, we use a spurious wave associated with the crosscorrelation of refracted energy at both receivers to infer estimates of subsurface parameters. We named this spurious event the virtual refraction. Illustrated by a numerical two-layer example, we found that the slope of the virtual refraction defines the velocity of the faster medium and that the stationary-phase point in the correlation gather provides the critical offset. With the associated critical time derived from the real shot record, this approach includes all of the necessary information to estimate wave speeds and interface depth without the need of inferences from other wave types.",
+      "keywords": "Green's function methods, interferometry, seismic waves, seismology",
+      "type": "article",
+      "bibcode": "2009Geop...74A..13M"
+    }
+  ]
+}

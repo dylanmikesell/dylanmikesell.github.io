@@ -1,0 +1,278 @@
+# Research Projects Data
+# Professional website research project information and outcomes
+
+projects:
+  - id: "glacial-seismology"
+    title: "Glacial Seismology and Ice Dynamics"
+    description: |
+      Advanced seismic monitoring and analysis of glacial systems to understand ice dynamics, 
+      calving processes, and climate change impacts on polar regions.
+    status: "active"
+    featured: true
+    start_date: "2020-01-15"
+    end_date: null
+    funding_sources:
+      - "NSF Grant #2025789"
+      - "NASA Cryospheric Sciences Program"
+    collaborators:
+      - name: "Dr. Jane Smith"
+        institution: "University of Colorado Boulder"
+        role: "Co-Investigator"
+      - name: "Dr. Michael Johnson"
+        institution: "USGS Glacier Hazards Project"
+        role: "Collaborator"
+    research_areas:
+      - "Cryosphere Science"
+      - "Seismology"
+      - "Climate Change"
+    keywords:
+      - "glacial seismology"
+      - "ice dynamics"
+      - "seismic monitoring"
+      - "calving events"
+      - "polar regions"
+    outcomes:
+      - type: "publication"
+        title: "Seismic Signatures of Glacial Calving Events"
+        journal: "Journal of Glaciology"
+        year: 2023
+        doi: "10.1017/jog.2023.12"
+      - type: "presentation"
+        title: "Machine Learning Applications in Glacial Seismology"
+        conference: "AGU Fall Meeting 2023"
+        year: 2023
+      - type: "dataset"
+        title: "Greenland Ice Sheet Seismic Monitoring Network Data"
+        repository: "IRIS Data Management Center"
+        year: 2023
+    location: "Greenland, Alaska"
+    website: null
+    image: "/assets/images/projects/glacial-seismology.jpg"
+
+  - id: "earthquake-early-warning"
+    title: "Earthquake Early Warning Systems"
+    description: |
+      Development and optimization of real-time earthquake detection and warning systems 
+      using advanced signal processing and machine learning techniques.
+    status: "active"
+    featured: true
+    start_date: "2019-09-01"
+    end_date: "2024-08-31"
+    funding_sources:
+      - "USGS Earthquake Hazards Program"
+      - "NSF PREEVENTS Grant #1855702"
+    collaborators:
+      - name: "Dr. Sarah Wilson"
+        institution: "UC Berkeley Seismology Lab"
+        role: "Principal Investigator"
+      - name: "Dr. Robert Chen"
+        institution: "Caltech Seismological Laboratory"
+        role: "Co-Investigator"
+    research_areas:
+      - "Seismology"
+      - "Earthquake Engineering"
+      - "Machine Learning"
+    keywords:
+      - "earthquake early warning"
+      - "real-time processing"
+      - "machine learning"
+      - "hazard mitigation"
+      - "seismic networks"
+    outcomes:
+      - type: "publication"
+        title: "Deep Learning for P-Wave Detection in Noisy Environments"
+        journal: "Seismological Research Letters"
+        year: 2022
+        doi: "10.1785/0220220089"
+      - type: "software"
+        title: "EEW-ML: Machine Learning Toolkit for Earthquake Early Warning"
+        repository: "https://github.com/seismo-lab/eew-ml"
+        year: 2022
+      - type: "presentation"
+        title: "Performance Evaluation of ML-Based EEW Systems"
+        conference: "SSA Annual Meeting 2023"
+        year: 2023
+    location: "California, Pacific Northwest"
+    website: "https://earthquake.usgs.gov/research/eew/"
+    image: "/assets/images/projects/earthquake-warning.jpg"
+
+  - id: "permafrost-monitoring"
+    title: "Permafrost Monitoring with Passive Seismics"
+    description: |
+      Long-term passive seismic monitoring of permafrost regions to detect thaw dynamics 
+      and assess climate change impacts on Arctic infrastructure.
+    status: "active"
+    featured: false
+    start_date: "2021-05-01"
+    end_date: "2025-04-30"
+    funding_sources:
+      - "DOE Office of Science"
+      - "NOAA Arctic Research Program"
+    collaborators:
+      - name: "Dr. Arctic Researcher"
+        institution: "University of Alaska Fairbanks"
+        role: "Co-Principal Investigator"
+      - name: "Dr. Climate Scientist"
+        institution: "NOAA Arctic Research Center"
+        role: "Collaborator"
+    research_areas:
+      - "Permafrost Science"
+      - "Climate Change"
+      - "Geophysics"
+    keywords:
+      - "permafrost"
+      - "passive seismics"
+      - "climate change"
+      - "Arctic"
+      - "infrastructure"
+    outcomes:
+      - type: "publication"
+        title: "Passive Seismic Monitoring of Permafrost Thaw Dynamics"
+        journal: "The Cryosphere"
+        year: 2023
+        doi: "10.5194/tc-17-2023"
+      - type: "dataset"
+        title: "Arctic Permafrost Seismic Monitoring Network"
+        repository: "Arctic Data Center"
+        year: 2023
+    location: "Alaska, Canadian Arctic"
+    website: null
+    image: "/assets/images/projects/permafrost-monitoring.jpg"
+
+  - id: "volcano-seismology"
+    title: "Volcanic Seismology and Eruption Forecasting"
+    description: |
+      Multi-disciplinary research combining seismology, geochemistry, and remote sensing 
+      to improve volcanic hazard assessment and eruption forecasting capabilities.
+    status: "completed"
+    featured: false
+    start_date: "2018-01-01"
+    end_date: "2021-12-31"
+    funding_sources:
+      - "NSF GeoPRISMS Program"
+      - "USGS Volcano Hazards Program"
+    collaborators:
+      - name: "Dr. Volcano Expert"
+        institution: "USGS Volcano Science Center"
+        role: "Collaborator"
+      - name: "Dr. Geochemist"
+        institution: "University of Washington"
+        role: "Co-Investigator"
+    research_areas:
+      - "Volcanology"
+      - "Seismology"
+      - "Hazard Assessment"
+    keywords:
+      - "volcanic seismology"
+      - "eruption forecasting"
+      - "hazard assessment"
+      - "remote sensing"
+      - "geochemistry"
+    outcomes:
+      - type: "publication"
+        title: "Seismic Precursors to Volcanic Eruptions: A Machine Learning Approach"
+        journal: "Journal of Volcanology and Geothermal Research"
+        year: 2020
+        doi: "10.1016/j.jvolgeores.2020.106892"
+      - type: "publication"
+        title: "Integration of Multi-Parameter Monitoring for Eruption Forecasting"
+        journal: "Bulletin of Volcanology"
+        year: 2021
+        doi: "10.1007/s00445-021-01456-2"
+      - type: "software"
+        title: "VOLSEIS: Volcanic Seismology Analysis Package"
+        repository: "https://github.com/volcano-lab/volseis"
+        year: 2021
+    location: "Cascade Range, Alaska"
+    website: null
+    image: "/assets/images/projects/volcano-seismology.jpg"
+
+  - id: "urban-seismology"
+    title: "Urban Seismology and Infrastructure Monitoring"
+    description: |
+      Dense seismic array deployment in urban environments to monitor infrastructure health, 
+      assess seismic hazards, and develop smart city resilience strategies.
+    status: "planning"
+    featured: false
+    start_date: "2024-01-01"
+    end_date: "2027-12-31"
+    funding_sources:
+      - "NSF Smart and Connected Communities"
+      - "DOT Infrastructure Research Grant"
+    collaborators:
+      - name: "Dr. Urban Planner"
+        institution: "MIT Urban Studies"
+        role: "Co-Principal Investigator"
+      - name: "Dr. Civil Engineer"
+        institution: "Stanford Infrastructure Lab"
+        role: "Collaborator"
+    research_areas:
+      - "Urban Seismology"
+      - "Infrastructure Monitoring"
+      - "Smart Cities"
+    keywords:
+      - "urban seismology"
+      - "infrastructure monitoring"
+      - "smart cities"
+      - "seismic hazards"
+      - "resilience"
+    outcomes: []
+    location: "San Francisco Bay Area"
+    website: null
+    image: null
+
+# Project categories for organization
+categories:
+  - id: "cryosphere"
+    name: "Cryosphere Science"
+    description: "Research focused on ice, snow, and frozen ground systems"
+    projects: ["glacial-seismology", "permafrost-monitoring"]
+    
+  - id: "hazards"
+    name: "Natural Hazards"
+    description: "Earthquake and volcanic hazard assessment and mitigation"
+    projects: ["earthquake-early-warning", "volcano-seismology"]
+    
+  - id: "monitoring"
+    name: "Environmental Monitoring"
+    description: "Long-term monitoring of environmental and infrastructure systems"
+    projects: ["permafrost-monitoring", "urban-seismology"]
+    
+  - id: "methodology"
+    name: "Methods Development"
+    description: "Development of new techniques and analytical methods"
+    projects: ["earthquake-early-warning", "volcano-seismology", "urban-seismology"]
+
+# Research themes that span multiple projects
+themes:
+  - id: "climate-change"
+    name: "Climate Change Impacts"
+    description: "Understanding how climate change affects geophysical systems"
+    related_projects: ["glacial-seismology", "permafrost-monitoring"]
+    
+  - id: "machine-learning"
+    name: "Machine Learning Applications"
+    description: "Applying AI/ML techniques to geophysical problems"
+    related_projects: ["earthquake-early-warning", "volcano-seismology", "glacial-seismology"]
+    
+  - id: "real-time-monitoring"
+    name: "Real-Time Monitoring"
+    description: "Development of real-time monitoring and alert systems"
+    related_projects: ["earthquake-early-warning", "permafrost-monitoring", "urban-seismology"]
+    
+  - id: "hazard-mitigation"
+    name: "Hazard Mitigation"
+    description: "Research aimed at reducing natural hazard risks"
+    related_projects: ["earthquake-early-warning", "volcano-seismology", "urban-seismology"]
+
+# Project statistics for display
+statistics:
+  total_projects: 5
+  active_projects: 3
+  completed_projects: 1
+  planning_projects: 1
+  total_funding: "$2.5M"
+  publication_count: 6
+  presentation_count: 3
+  software_releases: 2
+  datasets_published: 2

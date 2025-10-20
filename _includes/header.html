@@ -1,0 +1,193 @@
+<!-- Header Navigation - Mobile-First Design with Accessibility -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-brand">
+        <a href="{{ '/' | relative_url }}" class="brand-link" aria-label="Home - {{ site.title }}">
+          <span class="brand-name">{{ site.title }}</span>
+          {% if site.subtitle %}
+          <span class="brand-subtitle">{{ site.subtitle }}</span>
+          {% endif %}
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="menu-toggle" 
+              type="button" 
+              aria-controls="main-navigation" 
+              aria-expanded="false"
+              aria-label="Toggle navigation menu">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+
+      <!-- Navigation Menu -->
+      <div class="mobile-nav" id="main-navigation">
+        <ul class="nav" role="menubar">
+          <li class="nav-item" role="none">
+            <a href="{{ '/' | relative_url }}" 
+               class="nav-link{% if page.url == '/' %} nav-link-active{% endif %}"
+               role="menuitem"
+               {% if page.url == '/' %}aria-current="page"{% endif %}>
+              Home
+            </a>
+          </li>
+          
+          <li class="nav-item" role="none">
+            <a href="{{ '/about/' | relative_url }}" 
+               class="nav-link{% if page.url contains '/about' %} nav-link-active{% endif %}"
+               role="menuitem"
+               {% if page.url contains '/about' %}aria-current="page"{% endif %}>
+              About
+            </a>
+          </li>
+          
+          <li class="nav-item" role="none">
+            <a href="{{ '/research/' | relative_url }}" 
+               class="nav-link{% if page.url contains '/research' %} nav-link-active{% endif %}"
+               role="menuitem"
+               {% if page.url contains '/research' %}aria-current="page"{% endif %}>
+              Research
+            </a>
+          </li>
+          
+          <li class="nav-item" role="none">
+            <a href="{{ '/publications/' | relative_url }}" 
+               class="nav-link{% if page.url contains '/publications' %} nav-link-active{% endif %}"
+               role="menuitem"
+               {% if page.url contains '/publications' %}aria-current="page"{% endif %}>
+              Publications
+            </a>
+          </li>
+          
+          <li class="nav-item" role="none">
+            <a href="{{ '/students/' | relative_url }}" 
+               class="nav-link{% if page.url contains '/students' %} nav-link-active{% endif %}"
+               role="menuitem"
+               {% if page.url contains '/students' %}aria-current="page"{% endif %}>
+              Students
+            </a>
+          </li>
+          
+          <li class="nav-item" role="none">
+            <a href="{{ '/contact/' | relative_url }}" 
+               class="nav-link{% if page.url contains '/contact' %} nav-link-active{% endif %}"
+               role="menuitem"
+               {% if page.url contains '/contact' %}aria-current="page"{% endif %}>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+/* Header-specific styles */
+.site-header {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  min-height: 64px;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: var(--color-text);
+  
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: var(--color-secondary);
+  }
+}
+
+.brand-name {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  display: block;
+}
+
+.brand-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  display: block;
+  margin-top: -2px;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  
+  .mobile-nav {
+    display: block !important;
+  }
+  
+  .nav {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+}
+</style>
+
+<script>
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const body = document.body;
+  
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', function() {
+      const isOpen = mobileNav.classList.contains('mobile-nav-open');
+      
+      if (isOpen) {
+        mobileNav.classList.remove('mobile-nav-open');
+        menuToggle.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+      } else {
+        mobileNav.classList.add('mobile-nav-open');
+        menuToggle.classList.add('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
+    });
+    
+    // Close menu when clicking navigation links (mobile)
+    const navLinks = mobileNav.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 768) {
+          mobileNav.classList.remove('mobile-nav-open');
+          menuToggle.classList.remove('menu-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          body.style.overflow = '';
+        }
+      });
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('mobile-nav-open')) {
+        mobileNav.classList.remove('mobile-nav-open');
+        menuToggle.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+        menuToggle.focus();
+      }
+    });
+  }
+});
+</script>

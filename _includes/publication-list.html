@@ -1,0 +1,492 @@
+<!-- Publications List Component -->
+<!-- Dynamic display of research publications from SciXplorer API -->
+
+<div class="publications-container" id="publications-container">
+  <!-- Loading State -->
+  <div class="publications-loading" id="publications-loading">
+    <div class="loading-spinner" aria-label="Loading publications"></div>
+    <p>Loading publications...</p>
+  </div>
+
+  <!-- Error State -->
+  <div class="publications-error" id="publications-error" style="display: none;">
+    <div class="error-message">
+      <h3>Unable to Load Publications</h3>
+      <p id="error-message-text">There was an error loading the publications list.</p>
+      <button class="retry-button" onclick="refreshPublications()">Try Again</button>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div class="publications-empty" id="publications-empty" style="display: none;">
+    <h3>No Publications Found</h3>
+    <p>No publications are currently available.</p>
+  </div>
+
+  <!-- Controls -->
+  <div class="publications-controls" id="publications-controls" style="display: none;">
+    <div class="controls-row">
+      <div class="search-container">
+        <label for="publication-search" class="sr-only">Search publications</label>
+        <input 
+          type="search" 
+          id="publication-search" 
+          placeholder="Search publications..." 
+          class="search-input"
+          aria-describedby="search-help">
+        <span id="search-help" class="sr-only">Search by title, author, or keywords</span>
+      </div>
+      
+      <div class="filter-container">
+        <label for="year-filter" class="filter-label">Year:</label>
+        <select id="year-filter" class="filter-select">
+          <option value="">All years</option>
+        </select>
+      </div>
+      
+      <div class="sort-container">
+        <label for="sort-select" class="filter-label">Sort by:</label>
+        <select id="sort-select" class="filter-select">
+          <option value="date-desc">Newest first</option>
+          <option value="date-asc">Oldest first</option>
+          <option value="citations-desc">Most cited</option>
+          <option value="title-asc">Title A-Z</option>
+        </select>
+      </div>
+      
+      <button class="refresh-button" onclick="refreshPublications()" title="Refresh publications">
+        <span class="refresh-icon" aria-hidden="true">↻</span>
+        <span class="sr-only">Refresh publications</span>
+      </button>
+    </div>
+    
+    <div class="results-info">
+      <span id="results-count">0 publications</span>
+      <span class="cache-info" id="cache-info"></span>
+    </div>
+  </div>
+
+  <!-- Publications List -->
+  <div class="publications-list" id="publications-list" style="display: none;">
+    <!-- Publications will be dynamically inserted here -->
+  </div>
+
+  <!-- Load More Button -->
+  <div class="load-more-container" id="load-more-container" style="display: none;">
+    <button class="load-more-button" onclick="loadMorePublications()">
+      Load More Publications
+    </button>
+  </div>
+</div>
+
+<!-- Publication Detail Modal -->
+<div class="modal-overlay" id="publication-modal" style="display: none;" onclick="closePublicationModal(event)">
+  <div class="modal-content" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+    <button class="modal-close" onclick="closePublicationModal()" aria-label="Close modal">&times;</button>
+    
+    <div class="modal-header">
+      <h2 id="modal-title">Publication Details</h2>
+    </div>
+    
+    <div class="modal-body" id="modal-description">
+      <!-- Publication details will be dynamically inserted here -->
+    </div>
+  </div>
+</div>
+
+<script>
+// Publications management
+let allPublications = [];
+let filteredPublications = [];
+let displayedCount = 0;
+let publicationsPerPage = 20;
+let apiClient = null;
+
+// Initialize publications when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  initializePublications();
+});
+
+/**
+ * Initialize publications display
+ */
+async function initializePublications() {
+  // Wait for API client to be available
+  if (typeof SciXplorerAPIClient !== 'undefined') {
+    apiClient = new SciXplorerAPIClient();
+    await loadPublications();
+  } else {
+    // Wait for API client script to load
+    setTimeout(initializePublications, 100);
+  }
+}
+
+/**
+ * Load publications from API
+ */
+async function loadPublications() {
+  const loadingEl = document.getElementById('publications-loading');
+  const errorEl = document.getElementById('publications-error');
+  const emptyEl = document.getElementById('publications-empty');
+  const controlsEl = document.getElementById('publications-controls');
+  const listEl = document.getElementById('publications-list');
+
+  try {
+    showLoading(true);
+    hideElements([errorEl, emptyEl, controlsEl, listEl]);
+
+    // Check if API is configured
+    if (!apiClient.isConfigured()) {
+      throw new Error('SciXplorer API not configured. Please set API credentials.');
+    }
+
+    // Fetch publications
+    const response = await apiClient.getPublications();
+    const publications = apiClient.processPublications(response);
+
+    if (publications.length === 0) {
+      showEmptyState();
+      return;
+    }
+
+    allPublications = publications;
+    filteredPublications = [...publications];
+    
+    // Initialize UI
+    populateYearFilter();
+    updateResultsCount();
+    updateCacheInfo();
+    displayPublications();
+    
+    // Show controls and list
+    showElements([controlsEl, listEl]);
+    showLoading(false);
+
+    // Set up event listeners
+    setupEventListeners();
+
+  } catch (error) {
+    console.error('Error loading publications:', error);
+    showError(error.message);
+  }
+}
+
+/**
+ * Refresh publications (clear cache and reload)
+ */
+async function refreshPublications() {
+  if (apiClient) {
+    apiClient.clearCache();
+    await loadPublications();
+  }
+}
+
+/**
+ * Display publications in the list
+ */
+function displayPublications() {
+  const listEl = document.getElementById('publications-list');
+  const loadMoreEl = document.getElementById('load-more-container');
+  
+  // Sort publications
+  sortPublications();
+  
+  // Get publications to display
+  const publicationsToShow = filteredPublications.slice(0, displayedCount + publicationsPerPage);
+  displayedCount = publicationsToShow.length;
+  
+  // Generate HTML
+  listEl.innerHTML = publicationsToShow.map(pub => generatePublicationHTML(pub)).join('');
+  
+  // Show/hide load more button
+  if (displayedCount < filteredPublications.length) {
+    showElements([loadMoreEl]);
+  } else {
+    hideElements([loadMoreEl]);
+  }
+}
+
+/**
+ * Generate HTML for a single publication
+ */
+function generatePublicationHTML(pub) {
+  const citationText = pub.citationCount > 0 ? `${pub.citationCount} citation${pub.citationCount !== 1 ? 's' : ''}` : 'No citations';
+  
+  return `
+    <article class="publication-item" data-bibcode="${pub.bibcode}">
+      <div class="publication-content">
+        <h3 class="publication-title">
+          <button class="title-link" onclick="showPublicationDetails('${pub.bibcode}')" aria-describedby="cite-${pub.bibcode}">
+            ${pub.title}
+          </button>
+        </h3>
+        
+        <p class="publication-authors">${pub.formatted_authors}</p>
+        
+        <div class="publication-meta">
+          <span class="publication-venue">${pub.publication}</span>
+          <span class="publication-year">${pub.year}</span>
+          ${pub.doi ? `<a href="https://doi.org/${pub.doi}" class="doi-link" target="_blank" rel="noopener">DOI</a>` : ''}
+        </div>
+        
+        <div class="publication-stats">
+          <span id="cite-${pub.bibcode}" class="citation-count">${citationText}</span>
+          ${pub.keywords.length > 0 ? `<span class="keywords">${pub.keywords.slice(0, 3).join(', ')}</span>` : ''}
+        </div>
+        
+        ${pub.abstract ? `
+        <div class="publication-abstract">
+          <p>${pub.abstract.length > 200 ? pub.abstract.substring(0, 200) + '...' : pub.abstract}</p>
+        </div>
+        ` : ''}
+      </div>
+    </article>
+  `;
+}
+
+/**
+ * Show publication details in modal
+ */
+function showPublicationDetails(bibcode) {
+  const publication = allPublications.find(pub => pub.bibcode === bibcode);
+  if (!publication) return;
+
+  const modal = document.getElementById('publication-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalBody = document.getElementById('modal-description');
+
+  modalTitle.textContent = publication.title;
+  modalBody.innerHTML = generatePublicationDetailsHTML(publication);
+
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  
+  // Focus management for accessibility
+  modal.querySelector('.modal-close').focus();
+}
+
+/**
+ * Generate detailed HTML for publication modal
+ */
+function generatePublicationDetailsHTML(pub) {
+  return `
+    <div class="publication-details">
+      <div class="detail-section">
+        <h4>Authors</h4>
+        <p>${pub.authors.join(', ')}</p>
+      </div>
+      
+      <div class="detail-section">
+        <h4>Publication</h4>
+        <p>${pub.publication} (${pub.year})</p>
+      </div>
+      
+      ${pub.abstract ? `
+      <div class="detail-section">
+        <h4>Abstract</h4>
+        <p>${pub.abstract}</p>
+      </div>
+      ` : ''}
+      
+      <div class="detail-section">
+        <h4>Metrics</h4>
+        <p>Citations: ${pub.citationCount}</p>
+      </div>
+      
+      ${pub.keywords.length > 0 ? `
+      <div class="detail-section">
+        <h4>Keywords</h4>
+        <p>${pub.keywords.join(', ')}</p>
+      </div>
+      ` : ''}
+      
+      <div class="detail-section">
+        <h4>Links</h4>
+        <div class="publication-links">
+          ${pub.doi ? `<a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener" class="external-link">DOI</a>` : ''}
+          ${pub.arxivId ? `<a href="https://arxiv.org/abs/${pub.arxivId}" target="_blank" rel="noopener" class="external-link">arXiv</a>` : ''}
+          <a href="https://ui.adsabs.harvard.edu/abs/${pub.bibcode}" target="_blank" rel="noopener" class="external-link">ADS</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Close publication modal
+ */
+function closePublicationModal(event) {
+  if (event && event.target !== event.currentTarget && !event.target.classList.contains('modal-close')) {
+    return;
+  }
+  
+  const modal = document.getElementById('publication-modal');
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+/**
+ * Setup event listeners for search and filters
+ */
+function setupEventListeners() {
+  const searchInput = document.getElementById('publication-search');
+  const yearFilter = document.getElementById('year-filter');
+  const sortSelect = document.getElementById('sort-select');
+
+  searchInput.addEventListener('input', debounce(handleSearch, 300));
+  yearFilter.addEventListener('change', handleFilter);
+  sortSelect.addEventListener('change', handleSort);
+}
+
+/**
+ * Handle search input
+ */
+function handleSearch() {
+  const searchTerm = document.getElementById('publication-search').value.toLowerCase();
+  
+  filteredPublications = allPublications.filter(pub => {
+    return pub.title.toLowerCase().includes(searchTerm) ||
+           pub.authors.some(author => author.toLowerCase().includes(searchTerm)) ||
+           pub.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm));
+  });
+  
+  displayedCount = 0;
+  updateResultsCount();
+  displayPublications();
+}
+
+/**
+ * Handle filter changes
+ */
+function handleFilter() {
+  const yearFilter = document.getElementById('year-filter').value;
+  
+  filteredPublications = allPublications.filter(pub => {
+    if (yearFilter && pub.year !== yearFilter) return false;
+    return true;
+  });
+  
+  // Apply search if active
+  const searchTerm = document.getElementById('publication-search').value;
+  if (searchTerm) {
+    handleSearch();
+  } else {
+    displayedCount = 0;
+    updateResultsCount();
+    displayPublications();
+  }
+}
+
+/**
+ * Handle sort changes
+ */
+function handleSort() {
+  displayPublications();
+}
+
+/**
+ * Sort publications based on selected criteria
+ */
+function sortPublications() {
+  const sortBy = document.getElementById('sort-select').value;
+  
+  filteredPublications.sort((a, b) => {
+    switch (sortBy) {
+      case 'date-desc':
+        return new Date(b.pubdate) - new Date(a.pubdate);
+      case 'date-asc':
+        return new Date(a.pubdate) - new Date(b.pubdate);
+      case 'citations-desc':
+        return b.citationCount - a.citationCount;
+      case 'title-asc':
+        return a.title.localeCompare(b.title);
+      default:
+        return 0;
+    }
+  });
+}
+
+/**
+ * Load more publications
+ */
+function loadMorePublications() {
+  displayPublications();
+}
+
+/**
+ * Populate year filter options
+ */
+function populateYearFilter() {
+  const yearFilter = document.getElementById('year-filter');
+  const years = [...new Set(allPublications.map(pub => pub.year))].sort((a, b) => b - a);
+  
+  yearFilter.innerHTML = '<option value="">All years</option>' +
+    years.map(year => `<option value="${year}">${year}</option>`).join('');
+}
+
+/**
+ * Update results count display
+ */
+function updateResultsCount() {
+  const countEl = document.getElementById('results-count');
+  const count = filteredPublications.length;
+  countEl.textContent = `${count} publication${count !== 1 ? 's' : ''}`;
+}
+
+/**
+ * Update cache info display
+ */
+function updateCacheInfo() {
+  const cacheEl = document.getElementById('cache-info');
+  cacheEl.textContent = '(cached data)';
+}
+
+/**
+ * Utility functions
+ */
+function showLoading(show) {
+  const loadingEl = document.getElementById('publications-loading');
+  loadingEl.style.display = show ? 'block' : 'none';
+}
+
+function showError(message) {
+  const errorEl = document.getElementById('publications-error');
+  const messageEl = document.getElementById('error-message-text');
+  
+  hideElements([document.getElementById('publications-loading')]);
+  messageEl.textContent = message;
+  showElements([errorEl]);
+}
+
+function showEmptyState() {
+  hideElements([document.getElementById('publications-loading')]);
+  showElements([document.getElementById('publications-empty')]);
+}
+
+function showElements(elements) {
+  elements.forEach(el => el.style.display = 'block');
+}
+
+function hideElements(elements) {
+  elements.forEach(el => el.style.display = 'none');
+}
+
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Keyboard navigation for modal
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closePublicationModal();
+  }
+});
+</script>

@@ -109,12 +109,12 @@ A professional contact, student, or funding representative browses Dylan's websi
 - What happens when contact forms are submitted with invalid or malicious data?
 - How does the site handle very long content that exceeds normal responsive breakpoints?
 - What happens when external links (LinkedIn, GitHub, etc.) are no longer valid?
-- What happens when SciXplorer API is temporarily unavailable or returns errors?
-- How does the site handle API authentication failures or expired credentials?
-- What happens when SciXplorer API responses are malformed or incomplete?
-- How does the site perform when API calls exceed the 3-second load time requirement?
-- What happens if SciXplorer changes their API structure or deprecates endpoints?
-- How does the site handle large publication lists that might impact page performance?
+- What happens when the NASA ADS sync script fails to update publication data?
+- How does the site handle corrupted or missing publication data files?
+- What happens when manual sync script execution is delayed for extended periods?
+- How does the site perform with large publication datasets in static files?
+- What happens if NASA ADS changes their API structure affecting the sync script?
+- How does the site handle invalid or malformed data from the sync script?
 
 ## Requirements *(mandatory)*
 
@@ -125,14 +125,14 @@ A professional contact, student, or funding representative browses Dylan's websi
 - **FR-003**: Site MUST present research experience and academic positions in reverse chronological order with institution, role, duration, and key achievements
 - **FR-004**: Site MUST showcase research expertise organized by scientific domain with methodological capabilities (Cryosphere, Solid Earth, Atmosphere, Planetary Science and Seismic Methods)
 - **FR-005**: Site MUST display current research projects with objectives, methodologies, and collaboration opportunities
-- **FR-006**: Site MUST dynamically retrieve and display publications from SciXplorer private library via authenticated API integration
-- **FR-007**: Site MUST include comprehensive publication metrics (citation counts, h-index, impact factors) automatically updated from SciXplorer API
-- **FR-008**: Site MUST dynamically retrieve and display grants/funding information from SciXplorer grants library via authenticated API
-- **FR-009**: Site MUST present funding history including grants, awards, and research support with automatic updates from external data sources
+- **FR-006**: Site MUST display publications from statically generated data files created by NASA ADS sync script
+- **FR-007**: Site MUST include comprehensive publication metrics (citation counts, h-index, impact factors) updated via periodic sync script execution
+- **FR-008**: Site MUST display grants/funding information from manually curated data files with optional sync script updates
+- **FR-009**: Site MUST present funding history including grants, awards, and research support with manual or scripted data updates
 - **FR-010**: Site MUST provide information for prospective students including research opportunities and application processes
-- **FR-011**: Site MUST securely store and manage SciXplorer API credentials for private library access without exposing keys in client-side code
-- **FR-012**: Site MUST implement caching mechanism for SciXplorer API responses to ensure performance requirements are met despite external API calls
-- **FR-013**: Site MUST gracefully handle SciXplorer API failures with fallback content and clear status indicators for visitors
+- **FR-011**: Site MUST store NASA ADS API credentials securely for sync script usage without exposing keys in repository
+- **FR-012**: Site MUST use static Jekyll data files for optimal performance without runtime API dependencies
+- **FR-013**: Site MUST display current data from static files with clear last-updated timestamps for content freshness
 - **FR-014**: Site MUST be fully functional and readable on mobile devices with touch-optimized navigation
 - **FR-015**: Site MUST load completely within 3 seconds on mobile networks per constitutional requirements (including API-driven content)
 - **FR-016**: Site MUST achieve 90+ Lighthouse performance and accessibility scores per constitutional standards
@@ -140,19 +140,21 @@ A professional contact, student, or funding representative browses Dylan's websi
 - **FR-018**: Site MUST provide downloadable academic CV in PDF format
 - **FR-019**: Site MUST integrate Google Analytics for visitor behavior tracking per constitutional requirements
 - **FR-020**: Site MUST be accessible according to WCAG 2.1 AA standards
-- **FR-021**: Site MUST work without JavaScript for core content (progressive enhancement) with static fallback for API-driven sections
+- **FR-021**: Site MUST work without JavaScript for core content (progressive enhancement) using static Jekyll data files
 - **FR-022**: Site MUST include proper SEO meta tags for academic and professional discovery via search engines
 - **FR-023**: Site MUST display teaching experience and student mentorship information where applicable
-- **FR-024**: Site MUST provide manual override capability for SciXplorer content in case of extended API unavailability
+- **FR-024**: Site MUST provide sync script (sync-ads-data.sh) for updating publication data from NASA ADS API
+- **FR-025**: Site MUST include clear documentation for running sync script and updating static data files
+- **FR-026**: Sync script MUST fetch publication data from NASA ADS API and generate Jekyll-compatible YAML/JSON data files
 
 ### Key Entities
 
 - **Research Profile**: Core academic identity including name, title, current affiliation, research interests, and scientific expertise areas
 - **Academic Experience**: Employment and educational history with institutions, roles, duration, responsibilities, and research achievements
 - **Research Portfolio**: Current and past research projects with objectives, methodologies, outcomes, collaborators, and funding sources
-- **Publications**: Scholarly articles, books, conference proceedings dynamically retrieved from SciXplorer API with real-time citation metrics, abstracts, and open access availability
-- **Funding History**: Grants, awards, fellowships, and research support dynamically retrieved from SciXplorer grants API with funding agencies, amounts, and project descriptions
-- **API Integration**: SciXplorer authentication, caching, error handling, and fallback mechanisms for reliable data retrieval
+- **Publications**: Scholarly articles, books, conference proceedings stored in static Jekyll data files with periodic updates via NASA ADS sync script including citation metrics, abstracts, and open access availability
+- **Funding History**: Grants, awards, fellowships, and research support stored in manually curated data files with optional sync script updates including funding agencies, amounts, and project descriptions
+- **Data Sync System**: NASA ADS API integration via sync script, static file generation, and manual data update processes for reliable content management
 - **Student Information**: Research opportunities, mentorship approach, current and past students, and application processes
 - **Contact Information**: Multiple communication channels including institutional email, academic profiles (ORCID, Google Scholar), and contact forms
 - **Teaching Portfolio**: Courses taught, educational philosophy, student outcomes, and academic service where applicable
@@ -167,8 +169,8 @@ A professional contact, student, or funding representative browses Dylan's websi
 - **SC-003**: 95% of visitors can successfully identify Dylan's research field and institutional affiliation within 10 seconds of arrival
 - **SC-004**: Prospective students can successfully identify research opportunities and contact process within 2 minutes of site exploration
 - **SC-005**: Funding representatives can locate dynamically updated publications, grants, and research metrics within 90 seconds of homepage arrival
-- **SC-006**: SciXplorer API integration maintains 99.5% uptime with graceful fallback when unavailable
-- **SC-007**: Publications and grants data refresh automatically from SciXplorer within 24 hours of updates to the source libraries
+- **SC-006**: Static data files ensure 100% site availability without external API dependencies during user visits
+- **SC-007**: Publications and grants data can be updated via sync script execution with clear documentation for manual update process
 - **SC-008**: Contact form submissions result in 100% message delivery to Dylan with automated confirmation to sender
 - **SC-009**: Site maintains full functionality across Chrome, Firefox, Safari, and Edge browsers on both desktop and mobile
 - **SC-010**: Google Analytics shows average session duration of 3+ minutes indicating engagement with academic content
@@ -176,5 +178,7 @@ A professional contact, student, or funding representative browses Dylan's websi
 - **SC-012**: Site passes all WCAG 2.1 AA accessibility requirements including screen reader compatibility
 - **SC-013**: Core academic content (profile, research, publications, contact) remains accessible and readable with JavaScript disabled
 - **SC-014**: Academic contacts can successfully reach Dylan through the website within 24 hours of inquiry submission
-- **SC-015**: API-driven content (publications, grants) loads within the 3-second performance requirement or shows meaningful loading states
+- **SC-015**: Static content loads within the 3-second performance requirement with optimal Jekyll performance optimization
+- **SC-016**: Sync script successfully fetches and processes publication data from NASA ADS API when executed manually
+- **SC-017**: Data files include clear last-updated timestamps showing content freshness to website visitors
 

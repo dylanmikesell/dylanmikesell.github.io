@@ -1,0 +1,305 @@
+<!-- Profile Summary Component for Homepage Hero Section -->
+<!-- Constitutional Requirements: Professional Focus, Mobile-First Design -->
+
+<div class="profile-summary" itemscope itemtype="https://schema.org/Person">
+  <div class="profile-content">
+    
+    <!-- Profile Image -->
+    <div class="profile-image-container">
+      {% if site.data.profile.profile_image %}
+      <img src="{{ site.data.profile.profile_image | relative_url }}" 
+           alt="{{ site.data.profile.profile_image_alt | default: site.data.profile.name }}"
+           class="profile-image"
+           itemprop="image"
+           loading="eager"
+           width="150"
+           height="150">
+      {% else %}
+      <!-- Placeholder if no image available -->
+      <div class="profile-image-placeholder" aria-label="Profile photo placeholder">
+        <span class="placeholder-text">{{ site.data.profile.name | slice: 0 }}</span>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Profile Information -->
+    <div class="profile-info">
+      <h1 class="profile-name" itemprop="name">
+        {{ site.data.profile.name | default: site.title }}
+      </h1>
+      
+      <p class="profile-title" itemprop="jobTitle">
+        {{ site.data.profile.title }}
+        {% if site.data.profile.affiliation %}
+        <span class="profile-affiliation" itemprop="affiliation">
+          at {{ site.data.profile.affiliation }}
+        </span>
+        {% endif %}
+      </p>
+      
+      {% if site.data.profile.bio_summary %}
+      <div class="profile-bio" itemprop="description">
+        {{ site.data.profile.bio_summary | markdownify }}
+      </div>
+      {% endif %}
+      
+      <!-- Key Research Areas -->
+      {% if site.data.profile.research_interests %}
+      <div class="research-highlights">
+        <h2 class="sr-only">Primary Research Areas</h2>
+        <div class="research-tags" role="list" aria-label="Research interests">
+          {% for interest in site.data.profile.research_interests limit:4 %}
+          <span class="tag tag-primary" role="listitem">{{ interest }}</span>
+          {% endfor %}
+          {% if site.data.profile.research_interests.size > 4 %}
+          <a href="{{ '/research/' | relative_url }}" class="tag tag-more" aria-label="View all research areas">
+            +{{ site.data.profile.research_interests.size | minus: 4 }} more
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      
+      <!-- Call to Action -->
+      <div class="profile-actions">
+        <a href="{{ '/about/' | relative_url }}" 
+           class="btn btn-primary"
+           aria-label="Learn more about Dylan's research and background">
+          Learn More
+        </a>
+        
+        <a href="{{ '/contact/' | relative_url }}" 
+           class="btn btn-outline"
+           aria-label="Contact Dylan for collaboration or opportunities">
+          Get in Touch
+        </a>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="profile-links">
+        {% if site.orcid %}
+        <a href="https://orcid.org/{{ site.orcid }}" 
+           class="profile-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="ORCID Profile (opens in new window)"
+           itemprop="sameAs">
+          <span class="link-icon" aria-hidden="true">🔗</span>
+          ORCID
+        </a>
+        {% endif %}
+        
+        {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}" 
+           class="profile-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="GitHub Profile (opens in new window)"
+           itemprop="sameAs">
+          <span class="link-icon" aria-hidden="true">💻</span>
+          GitHub
+        </a>
+        {% endif %}
+        
+        {% if site.data.profile.google_scholar %}
+        <a href="{{ site.data.profile.google_scholar }}" 
+           class="profile-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Google Scholar Profile (opens in new window)"
+           itemprop="sameAs">
+          <span class="link-icon" aria-hidden="true">📚</span>
+          Publications
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Profile Summary Styles - Mobile-First */
+.profile-summary {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-lg);
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--spacing-xl);
+  }
+}
+
+.profile-image-container {
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+  box-shadow: var(--box-shadow);
+  
+  @media (min-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.profile-image-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-border);
+  box-shadow: var(--box-shadow);
+  
+  @media (min-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.placeholder-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0; /* Prevent overflow */
+}
+
+.profile-name {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+  
+  @media (min-width: 768px) {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+.profile-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  
+  @media (min-width: 768px) {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.profile-affiliation {
+  display: block;
+  font-size: var(--font-size-base);
+  
+  @media (min-width: 768px) {
+    display: inline;
+  }
+}
+
+.profile-bio {
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-relaxed);
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.research-highlights {
+  margin-bottom: var(--spacing-lg);
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  justify-content: center;
+  
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.tag-more {
+  background-color: var(--color-text-light);
+  color: white;
+  text-decoration: none;
+  
+  &:hover,
+  &:focus {
+    background-color: var(--color-text);
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  
+  @media (min-width: 640px) {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+  
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-link);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  min-height: 44px; /* Touch target */
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+    background-color: var(--color-background-alt);
+    text-decoration: none;
+  }
+}
+
+.link-icon {
+  font-size: var(--font-size-base);
+}
+</style>

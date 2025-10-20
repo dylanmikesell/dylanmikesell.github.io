@@ -1,0 +1,359 @@
+// Responsive Design - Mobile-First Breakpoints and Utilities
+// Constitutional Requirements: Mobile-First Design, 44px Touch Targets, Performance
+
+// Breakpoint Mixins
+@mixin mobile-first($breakpoint) {
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-and-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-and-up {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large-desktop-and-up {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// Container Responsive Behavior
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  
+  @include mobile-first(640px) {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+  
+  @include mobile-first(768px) {
+    max-width: 768px;
+  }
+  
+  @include mobile-first(1024px) {
+    max-width: 1024px;
+  }
+  
+  @include mobile-first(1280px) {
+    max-width: 1200px;
+  }
+}
+
+// Responsive Typography
+.text-responsive {
+  font-size: var(--font-size-sm);
+  
+  @include tablet-and-up {
+    font-size: var(--font-size-base);
+  }
+  
+  @include desktop-and-up {
+    font-size: var(--font-size-lg);
+  }
+}
+
+// Responsive Spacing
+.spacing-responsive {
+  margin-bottom: var(--spacing-md);
+  
+  @include tablet-and-up {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  @include desktop-and-up {
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+// Mobile Navigation Styles
+.mobile-nav {
+  @include mobile-only {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-background);
+    z-index: 1000;
+    padding: var(--spacing-lg);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    
+    &.mobile-nav-open {
+      transform: translateX(0);
+    }
+    
+    .nav {
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .nav-link {
+      font-size: var(--font-size-xl);
+      padding: var(--spacing-lg);
+      text-align: center;
+      min-height: 60px; // Larger touch targets for mobile menu
+    }
+  }
+  
+  @include tablet-and-up {
+    position: static;
+    transform: none;
+    background-color: transparent;
+    padding: 0;
+    
+    .nav {
+      flex-direction: row;
+      height: auto;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    
+    .nav-link {
+      font-size: var(--font-size-base);
+      padding: var(--spacing-sm) var(--spacing-md);
+      min-height: 44px;
+    }
+  }
+}
+
+// Touch-Friendly Elements
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--spacing-sm);
+  
+  @include tablet-and-up {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+// Responsive Images with Art Direction
+.responsive-image {
+  width: 100%;
+  height: auto;
+  
+  // Mobile: Square crop
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  
+  @include tablet-and-up {
+    // Tablet+: Original aspect ratio
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+}
+
+// Flexible Layout Utilities
+.flex-mobile-column {
+  display: flex;
+  flex-direction: column;
+  
+  @include tablet-and-up {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.flex-mobile-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  
+  @include tablet-and-up {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+}
+
+// Grid Responsive Utilities
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  
+  @include tablet-and-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+.grid-responsive-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  
+  @include mobile-first(640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include desktop-and-up {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+.grid-responsive-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  
+  @include tablet-and-up {
+    gap: var(--spacing-lg);
+  }
+}
+
+// Responsive Text Alignment
+.text-center-mobile {
+  text-align: center;
+  
+  @include tablet-and-up {
+    text-align: left;
+  }
+}
+
+.text-left-mobile {
+  text-align: left;
+  
+  @include tablet-and-up {
+    text-align: center;
+  }
+}
+
+// Hide/Show at Different Breakpoints
+.show-mobile-only {
+  display: block;
+  
+  @include tablet-and-up {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  display: none;
+  
+  @include tablet-and-up {
+    display: block;
+  }
+}
+
+.show-tablet-up {
+  display: none;
+  
+  @include tablet-and-up {
+    display: block;
+  }
+}
+
+.show-desktop-up {
+  display: none;
+  
+  @include desktop-and-up {
+    display: block;
+  }
+}
+
+// Mobile-First Form Layouts
+.form-responsive {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-md);
+    
+    @include tablet-and-up {
+      flex-direction: row;
+      align-items: center;
+      
+      label {
+        flex: 0 0 200px;
+        margin-right: var(--spacing-md);
+        margin-bottom: 0;
+      }
+      
+      input,
+      textarea,
+      select {
+        flex: 1;
+      }
+    }
+  }
+  
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    
+    @include tablet-and-up {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+}
+
+// Responsive Hero Section
+.hero-responsive {
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+  
+  @include tablet-and-up {
+    padding: var(--spacing-3xl) 0;
+    
+    .hero-content {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      gap: var(--spacing-xl);
+    }
+    
+    .hero-text {
+      flex: 1;
+    }
+    
+    .hero-image {
+      flex: 0 0 300px;
+    }
+  }
+  
+  @include desktop-and-up {
+    .hero-image {
+      flex: 0 0 400px;
+    }
+  }
+}
+
+// Mobile Performance Optimizations
+@include mobile-only {
+  // Reduce animations on mobile for performance
+  * {
+    animation-duration: 0.1s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.1s !important;
+  }
+  
+  // Simpler shadows on mobile
+  .card,
+  .btn {
+    box-shadow: var(--box-shadow-sm);
+  }
+}

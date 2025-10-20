@@ -101,20 +101,20 @@ Jekyll static website structure - all paths relative to repository root.
 
 **Independent Test**: Browse research examples, view publication details, assess research capability insights
 
-- [ ] T039 [US5] Create assets/js/api-client.js for SciXplorer API integration with authentication
-- [ ] T040 [US5] Implement SciXplorer API authentication using GitHub Actions secrets
-- [ ] T041 [P] [US5] Create _includes/publication-list.html component with dynamic API data display
-- [ ] T042 [P] [US5] Create _data/projects.yml with research project information and outcomes
-- [ ] T043 [US5] Create pages/publications.md with dynamic publications display and metrics
-- [ ] T044 [US5] Implement API caching strategy with localStorage and build-time fallbacks
-- [ ] T045 [P] [US5] Create publication detail modal/pages with abstracts and citation information
-- [ ] T046 [P] [US5] Add search and filter functionality for large publication lists
-- [ ] T047 [US5] Implement graceful error handling for SciXplorer API failures
-- [ ] T048 [US5] Create manual refresh capability for immediate publication updates
+- [x] T039 [US5] Create assets/js/api-client.js for SciXplorer API integration with authentication
+- [x] T040 [US5] Implement SciXplorer API authentication using GitHub Actions secrets
+- [x] T041 [P] [US5] Create _includes/publication-list.html component with dynamic API data display
+- [x] T042 [P] [US5] Create _data/projects.yml with research project information and outcomes
+- [x] T043 [US5] Create pages/publications.md with dynamic publications display and metrics
+- [x] T044 [US5] Implement API caching strategy with localStorage and build-time fallbacks
+- [x] T045 [P] [US5] Create publication detail modal/pages with abstracts and citation information
+- [x] T046 [P] [US5] Add search and filter functionality for large publication lists
+- [x] T047 [US5] Implement graceful error handling for SciXplorer API failures
+- [x] T048 [US5] Create manual refresh capability for immediate publication updates
 
 **US5 Testing**:
-- [ ] T049 [P] [US5] Test API integration with sample SciXplorer data and error scenarios
-- [ ] T050 [P] [US5] Verify publication display performance with 100+ publications
+- [x] T049 [P] [US5] Test API integration with sample SciXplorer data and error scenarios
+- [x] T050 [P] [US5] Verify publication display performance with 100+ publications
 
 ---
 

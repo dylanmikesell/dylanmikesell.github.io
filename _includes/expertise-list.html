@@ -1,0 +1,295 @@
+<!-- Expertise List Component - Research Areas Display -->
+<!-- Constitutional Requirements: Mobile-First Design, Accessibility -->
+
+{% assign expertise_limit = include.limit | default: 12 %}
+{% assign show_descriptions = include.descriptions | default: false %}
+{% assign layout = include.layout | default: "grid" %}
+
+{% if site.data.expertise.research_domains %}
+<div class="expertise-list" role="region" aria-labelledby="expertise-heading">
+  
+  {% if layout == "grid" %}
+  <div class="expertise-grid">
+    {% for domain in site.data.expertise.research_domains limit:expertise_limit %}
+    <div class="expertise-card" 
+         itemscope 
+         itemtype="https://schema.org/Skill">
+      
+      <div class="expertise-header">
+        <h3 class="expertise-name" itemprop="name">{{ domain.name }}</h3>
+        
+        {% if domain.proficiency %}
+        <span class="expertise-level expertise-level-{{ domain.proficiency }}" 
+              aria-label="Proficiency level: {{ domain.proficiency }}">
+          {{ domain.proficiency | capitalize }}
+        </span>
+        {% endif %}
+      </div>
+      
+      {% if show_descriptions and domain.description %}
+      <p class="expertise-description" itemprop="description">
+        {{ domain.description }}
+      </p>
+      {% endif %}
+      
+      {% if domain.keywords %}
+      <div class="expertise-keywords" role="list" aria-label="Related keywords">
+        {% for keyword in domain.keywords limit:4 %}
+        <span class="keyword-tag" role="listitem">{{ keyword }}</span>
+        {% endfor %}
+        {% if domain.keywords.size > 4 %}
+        <span class="keyword-more">+{{ domain.keywords.size | minus: 4 }}</span>
+        {% endif %}
+      </div>
+      {% endif %}
+      
+      {% if domain.years_experience %}
+      <div class="expertise-experience">
+        <span class="sr-only">Years of experience: </span>
+        <span class="experience-years">{{ domain.years_experience }} years</span>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  
+  {% else %}
+  <!-- List layout for compact display -->
+  <div class="expertise-list-compact">
+    {% for domain in site.data.expertise.research_domains limit:expertise_limit %}
+    <div class="expertise-item"
+         itemscope 
+         itemtype="https://schema.org/Skill">
+      
+      <div class="expertise-item-content">
+        <span class="expertise-name" itemprop="name">{{ domain.name }}</span>
+        
+        {% if domain.proficiency %}
+        <span class="expertise-level expertise-level-{{ domain.proficiency }}" 
+              aria-label="Proficiency: {{ domain.proficiency }}">
+          {{ domain.proficiency }}
+        </span>
+        {% endif %}
+      </div>
+      
+      {% if domain.years_experience %}
+      <span class="expertise-years">{{ domain.years_experience }}y</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <!-- Show more link if there are additional expertise areas -->
+  {% if site.data.expertise.research_domains.size > expertise_limit %}
+  <div class="expertise-more">
+    <a href="{{ '/research/' | relative_url }}" 
+       class="btn btn-outline btn-sm"
+       aria-label="View all {{ site.data.expertise.research_domains.size }} research areas">
+      View All Research Areas 
+      <span class="more-count">({{ site.data.expertise.research_domains.size }} total)</span>
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+/* Expertise List Styles - Mobile-First */
+.expertise-list {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Grid Layout */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.expertise-card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  transition: var(--transition-base);
+  
+  &:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-2px);
+  }
+}
+
+.expertise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.expertise-name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+  flex: 1;
+  line-height: var(--line-height-tight);
+}
+
+.expertise-level {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.expertise-level-expert {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+  border: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+.expertise-level-advanced {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--color-secondary);
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.expertise-level-intermediate {
+  background-color: rgba(243, 156, 18, 0.1);
+  color: #f39c12;
+  border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+.expertise-description {
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.expertise-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.keyword-tag {
+  background-color: var(--color-background-alt);
+  color: var(--color-text-light);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.keyword-more {
+  background-color: var(--color-text-light);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.expertise-experience {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.experience-years {
+  color: var(--color-secondary);
+}
+
+/* Compact List Layout */
+.expertise-list-compact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.expertise-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius);
+  gap: var(--spacing-md);
+}
+
+.expertise-item-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.expertise-item .expertise-name {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expertise-item .expertise-level {
+  font-size: var(--font-size-xs);
+  padding: 2px var(--spacing-xs);
+}
+
+.expertise-years {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* More button */
+.expertise-more {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+.more-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 639px) {
+  .expertise-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .expertise-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .expertise-item-content {
+    width: 100%;
+  }
+  
+  .expertise-years {
+    align-self: flex-end;
+  }
+}
+</style>
+{% endif %}

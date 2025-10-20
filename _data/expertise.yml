@@ -1,0 +1,198 @@
+# Research Expertise and Capabilities
+# Constitutional Requirements: Professional Focus, Content-Driven Development
+
+# Primary Research Domains
+research_domains:
+  - name: "Seismic Interferometry"
+    category: "methodology"
+    description: "Development and application of seismic interferometry methods for subsurface imaging and monitoring"
+    keywords: ["ambient noise", "Green's functions", "cross-correlation", "virtual sources"]
+    proficiency: "expert"
+    years_experience: 8
+    
+  - name: "Environmental Seismology"
+    category: "application"
+    description: "Using seismic methods to monitor environmental changes and natural hazards"
+    keywords: ["monitoring", "environmental changes", "subsurface characterization", "hazard assessment"]
+    proficiency: "expert"
+    years_experience: 6
+    
+  - name: "Volcano Seismology"
+    category: "application"
+    description: "Seismic analysis methods for volcanic monitoring and hazard assessment"
+    keywords: ["volcanic monitoring", "eruption forecasting", "seismic signals", "hazard mitigation"]
+    proficiency: "advanced"
+    years_experience: 5
+    
+  - name: "Signal Processing"
+    category: "methodology"
+    description: "Advanced digital signal processing techniques for geophysical data analysis"
+    keywords: ["time series analysis", "spectral analysis", "filtering", "denoising"]
+    proficiency: "expert"
+    years_experience: 10
+    
+  - name: "Machine Learning for Geophysics"
+    category: "methodology"
+    description: "Application of machine learning and AI methods to geophysical data interpretation"
+    keywords: ["neural networks", "pattern recognition", "automated analysis", "deep learning"]
+    proficiency: "advanced"
+    years_experience: 4
+
+# Technical Skills and Methods
+technical_methods:
+  - name: "Array Processing"
+    category: "data_analysis"
+    description: "Multi-station seismic array analysis and beamforming techniques"
+    tools: ["array processing software", "beamforming algorithms", "source localization"]
+    proficiency: "expert"
+    
+  - name: "Time Series Analysis" 
+    category: "data_analysis"
+    description: "Statistical and spectral analysis of continuous geophysical time series"
+    tools: ["spectral analysis", "wavelet transforms", "statistical methods"]
+    proficiency: "expert"
+    
+  - name: "Seismic Imaging"
+    category: "data_analysis"
+    description: "Subsurface imaging using seismic wave propagation and scattering"
+    tools: ["imaging algorithms", "velocity models", "migration techniques"]
+    proficiency: "advanced"
+    
+  - name: "Field Instrumentation"
+    category: "field_methods"
+    description: "Design and deployment of seismic monitoring networks and field experiments"
+    tools: ["seismometers", "data loggers", "field deployment", "maintenance"]
+    proficiency: "advanced"
+
+# Software and Programming
+software_expertise:
+  - name: "MATLAB"
+    category: "programming"
+    proficiency: "expert"
+    years_experience: 12
+    description: "Primary language for geophysical data analysis and algorithm development"
+    
+  - name: "Python"
+    category: "programming"  
+    proficiency: "advanced"
+    years_experience: 8
+    description: "Scientific computing, data analysis, and machine learning applications"
+    libraries: ["NumPy", "SciPy", "Matplotlib", "Pandas", "ObsPy", "scikit-learn"]
+    
+  - name: "R"
+    category: "programming"
+    proficiency: "intermediate"
+    years_experience: 4
+    description: "Statistical analysis and data visualization"
+    
+  - name: "C/C++"
+    category: "programming"
+    proficiency: "intermediate"
+    years_experience: 6
+    description: "High-performance computing and algorithm optimization"
+    
+  - name: "Git/GitHub"
+    category: "tools"
+    proficiency: "advanced"
+    years_experience: 8
+    description: "Version control and collaborative software development"
+    
+  - name: "Linux/Unix"
+    category: "systems"
+    proficiency: "advanced"
+    years_experience: 10
+    description: "High-performance computing environments and system administration"
+
+# Specialized Geophysical Software
+geophysical_software:
+  - name: "ObsPy"
+    category: "seismology"
+    proficiency: "expert"
+    description: "Python framework for seismological data processing"
+    
+  - name: "SAC (Seismic Analysis Code)"
+    category: "seismology"
+    proficiency: "advanced"
+    description: "Industry standard seismic data analysis software"
+    
+  - name: "Seismic Unix"
+    category: "seismology"
+    proficiency: "intermediate"
+    description: "Open-source seismic data processing package"
+    
+  - name: "GMT (Generic Mapping Tools)"
+    category: "visualization"
+    proficiency: "advanced"
+    description: "Geospatial data processing and visualization"
+
+# Research Methodologies
+methodologies:
+  - name: "Experimental Design"
+    description: "Design of field experiments and controlled studies for geophysical research"
+    approaches: ["hypothesis testing", "controlled experiments", "observational studies"]
+    
+  - name: "Statistical Analysis"
+    description: "Application of statistical methods to geophysical data interpretation"
+    approaches: ["uncertainty quantification", "hypothesis testing", "regression analysis"]
+    
+  - name: "Computational Modeling"
+    description: "Development and application of numerical models for geophysical processes"
+    approaches: ["forward modeling", "inverse problems", "numerical simulation"]
+    
+  - name: "Data Integration"
+    description: "Multi-disciplinary data integration and joint interpretation methods"
+    approaches: ["multi-sensor analysis", "data fusion", "cross-validation"]
+
+# Equipment and Instrumentation
+instrumentation_experience:
+  - name: "Broadband Seismometers"
+    category: "sensors"
+    experience_level: "expert"
+    description: "Installation, maintenance, and data quality assessment"
+    
+  - name: "Short-period Seismometers"
+    category: "sensors"
+    experience_level: "advanced"
+    description: "Array deployments and field maintenance"
+    
+  - name: "Data Acquisition Systems"
+    category: "recording"
+    experience_level: "advanced"
+    description: "Real-time and continuous recording system setup and management"
+    
+  - name: "GPS Timing Systems"
+    category: "timing"
+    experience_level: "intermediate"
+    description: "Precise timing for seismic network synchronization"
+
+# Research Impact Areas
+impact_areas:
+  - area: "Natural Hazard Monitoring"
+    description: "Contributing to improved monitoring and early warning systems"
+    applications: ["volcanic hazards", "landslide monitoring", "groundwater changes"]
+    
+  - area: "Environmental Monitoring"
+    description: "Advancing environmental monitoring capabilities using seismic methods"
+    applications: ["subsurface contamination", "permafrost monitoring", "climate impacts"]
+    
+  - area: "Subsurface Characterization"
+    description: "Improved methods for understanding subsurface structure and properties"
+    applications: ["groundwater resources", "geotechnical assessment", "resource exploration"]
+    
+  - area: "Methodological Innovation"
+    description: "Development of new analysis methods and computational techniques"
+    applications: ["algorithm development", "software tools", "best practices"]
+
+# Professional Development
+continuing_education:
+  - area: "Machine Learning Applications"
+    description: "Ongoing development of ML skills for geophysical applications"
+    recent_focus: ["deep learning", "pattern recognition", "automated interpretation"]
+    
+  - area: "High-Performance Computing"
+    description: "Advanced computational methods for large-scale data analysis"
+    recent_focus: ["parallel processing", "cloud computing", "GPU acceleration"]
+    
+  - area: "Open Science Practices"
+    description: "Commitment to reproducible research and open data sharing"
+    recent_focus: ["reproducible workflows", "data management", "software sharing"]

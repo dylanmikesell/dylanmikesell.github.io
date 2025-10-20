@@ -5,19 +5,19 @@
 
 ## Summary
 
-Create a professional research website for Dylan Mikesell targeting three key audiences: employers/collaborators, prospective students, and research funders. The site will dynamically integrate with SciXplorer API to display real-time publications and grants data while maintaining constitutional requirements for performance (<3s load), accessibility (90+ Lighthouse scores), and mobile-first design using Jekyll on GitHub Pages.
+Create a professional research website for Dylan Mikesell targeting three key audiences: employers/collaborators, prospective students, and research funders. The site will use static data files updated via NASA ADS sync script to display publications and grants data while maintaining constitutional requirements for performance (<3s load), accessibility (90+ Lighthouse scores), and mobile-first design using Jekyll on GitHub Pages.
 
 ## Technical Context
 
-**Language/Version**: HTML5, CSS3, JavaScript ES6+, Ruby 3.1+ (Jekyll), Liquid templating  
-**Primary Dependencies**: Jekyll 4.3+, GitHub Pages gem, NEEDS CLARIFICATION: SciXplorer API client library  
-**Storage**: Git-based content management, NEEDS CLARIFICATION: API response caching strategy  
-**Testing**: NEEDS CLARIFICATION: HTML validation, Lighthouse CI, accessibility testing framework  
+**Language/Version**: HTML5, CSS3, JavaScript ES6+, Ruby 3.1+ (Jekyll), Liquid templating, Bash scripting
+**Primary Dependencies**: Jekyll 4.3+, GitHub Pages gem, NASA ADS API (sync script only), jq (JSON processing)
+**Storage**: Git-based content management, Jekyll data files (_data/), static file generation
+**Testing**: HTML validation, Lighthouse CI, accessibility testing framework, sync script validation
 **Target Platform**: GitHub Pages (Jekyll), modern browsers (Chrome, Firefox, Safari, Edge)
-**Project Type**: Static website with dynamic API integration  
-**Performance Goals**: <3 seconds load time on 3G, 90+ Lighthouse scores, NEEDS CLARIFICATION: API response caching duration  
-**Constraints**: GitHub Pages limitations, SciXplorer API rate limits, NEEDS CLARIFICATION: API authentication security model  
-**Scale/Scope**: Single researcher website, ~10 pages, dynamic publications/grants sections, NEEDS CLARIFICATION: expected publication count
+**Project Type**: Static website with periodic data sync via script
+**Performance Goals**: <3 seconds load time on 3G, 90+ Lighthouse scores, optimal static file performance
+**Constraints**: GitHub Pages limitations, NASA ADS API rate limits, manual sync script execution
+**Scale/Scope**: Single researcher website, ~10 pages, static publications/grants sections, 46+ publications
 
 ## Constitution Check
 

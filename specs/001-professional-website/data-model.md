@@ -48,34 +48,39 @@
 - One-to-many with Research Profile
 - Ordered by start_date descending
 
-### Publications (SciXplorer API)
-**Purpose**: Scholarly publications with real-time metrics
+### Publications (NASA ADS via Sync Script)
+**Purpose**: Scholarly publications with metrics updated via sync script
 
-**API Fields** (from SciXplorer):
-- `bibcode`: Unique ADS identifier (string, required)
+**Static Data Fields** (from NASA ADS via sync-ads-data.sh):
 - `title`: Publication title (string, required)
-- `authors`: Author list (array of strings, required)
-- `publication`: Journal/venue (string, required)
-- `pubdate`: Publication date (date, required)
-- `abstract`: Article abstract (text)
-- `citation_count`: Current citations (integer, auto-updated)
+- `authors`: Author list (string, required) 
+- `venue`: Journal/venue (string, required)
+- `year`: Publication year (integer, required)
+- `citations`: Current citations (integer, auto-updated via sync)
 - `doi`: Digital Object Identifier (string)
-- `arxiv_id`: ArXiv identifier (string, optional)
+- `bibcode`: Unique ADS identifier (string, required)
+- `abstract`: Article abstract (text)
 - `keywords`: Subject keywords (array of strings)
-- `affiliations`: Author affiliations (array of strings)
+- `orcid_ids`: Author ORCID identifiers (array of strings)
 
-**Local Fields** (website-specific):
+**Jekyll Data Fields** (website-specific):
 - `featured`: Highlight publication (boolean, default false)
 - `category`: Research area classification (string)
 - `local_notes`: Personal notes/context (text, optional)
-- `cached_at`: Last API fetch timestamp (datetime)
+- `last_updated`: Last sync timestamp (datetime)
 
 **Validation Rules**:
 - Title and authors required
-- Citation count non-negative integer
+- Citation count non-negative integer  
 - DOI format validation if present
+- Year must be valid 4-digit year
 
-### Funding History (SciXplorer API + Manual)
+**Data Source**: 
+- Primary: NASA ADS API (via sync-ads-data.sh script)
+- Storage: _data/publications.yml and _data/publications.json
+- Update Frequency: Manual execution of sync script
+
+### Funding History (Manual Curation + Optional Sync)
 **Purpose**: Grants, awards, and research support
 
 **Fields**:
@@ -91,13 +96,19 @@
 - `description`: Project description (text)
 - `collaborators`: Co-investigators (array of strings)
 - `keywords`: Research keywords (array of strings)
-- `publications`: Related publications (array of bibcodes)
+- `related_publications`: Related publication titles (array of strings)
+- `last_updated`: Last manual update (datetime)
 
 **Validation Rules**:
 - Title, agency, and role required
 - Amount must be positive if specified
 - Start date before end date
 - Status must match date ranges
+
+**Data Source**:
+- Primary: Manual curation in _data/grants.yml
+- Optional: Future sync script integration
+- Storage: _data/grants.yml and _data/grants.json
 
 ### Research Portfolio
 **Purpose**: Current and past research projects

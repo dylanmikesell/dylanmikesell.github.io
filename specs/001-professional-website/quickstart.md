@@ -14,7 +14,7 @@
 
 ### Required Accounts  
 - **GitHub**: Repository hosting and Pages deployment
-- **SciXplorer**: API access for publications data
+- **NASA ADS**: API access for publications data (sync script only)
 - **Google Analytics**: Visitor tracking (optional but recommended)
 
 ### VS Code Extensions (Recommended)
@@ -48,10 +48,8 @@ bundle exec jekyll --version
 ### 3. Configure Environment Variables
 Create `.env` file (ignored by git):
 ```bash
-# SciXplorer API Configuration
-SCIXPLORER_API_KEY=your_api_key_here
-SCIXPLORER_LIBRARY_ID=your_library_id_here
-SCIXPLORER_GRANTS_ID=your_grants_library_id_here
+# NASA ADS API Configuration (for sync script only)
+ADS_TOKEN=your_nasa_ads_token_here
 
 # Google Analytics
 GA_TRACKING_ID=G-XXXXXXXXXX
@@ -61,17 +59,21 @@ CONTACT_FORM_ENDPOINT=https://your-form-service.com/submit
 ```
 
 ### 4. Set Up GitHub Repository Secrets
-In GitHub repository settings > Secrets and variables > Actions:
+**Note**: GitHub Pages deployment uses static data files only. No repository secrets required for publications data.
+
+Optional secrets (if using additional features):
 ```
-SCIXPLORER_API_KEY: your_api_key_here
-SCIXPLORER_LIBRARY_ID: your_library_id_here
 GA_TRACKING_ID: G-XXXXXXXXXX
+CONTACT_FORM_API_KEY: your_contact_form_key
 ```
 
 ## Development Workflow
 
 ### Local Development Server
 ```bash
+# Update publications and grants
+./sync-ads-data.sh 
+
 # Start Jekyll development server
 bundle exec jekyll serve --livereload
 
@@ -92,7 +94,9 @@ dylanmikesell.github.io/
 │   ├── profile.yml          # Personal/professional info
 │   ├── experience.yml       # Academic/work history
 │   ├── projects.yml         # Research projects
-│   └── students.yml         # Student opportunities
+│   ├── publications.yml     # Publications (from sync script)
+│   ├── metrics.json         # Citation metrics (from sync script)
+│   └── featured_publications.json # Featured pubs (from sync script)
 ├── _includes/               # Reusable components
 │   ├── header.html          # Site navigation
 │   ├── footer.html          # Site footer
@@ -165,23 +169,27 @@ projects:
       - "NSF Grant #12345"
 ```
 
-### API Integration Testing
+### Data Sync Testing
 
-#### Test SciXplorer API Connection
+#### Test NASA ADS Sync Script
 ```bash
-# Test API connectivity
-curl -H "Authorization: Bearer YOUR_API_KEY" \
-     "https://api.adsabs.harvard.edu/v1/biblib/libraries/YOUR_LIBRARY_ID"
+# Set your API token
+export ADS_TOKEN=your_nasa_ads_token
 
-# Test from Jekyll (development)
-bundle exec jekyll build --verbose
+# Run sync script
+./sync-ads-data.sh
+
+# Verify generated data files
+ls -la _data/
+cat _data/metrics.json
+head -10 _data/publications.yml
 ```
 
-#### Verify API Caching
-1. Load publications page
-2. Check browser developer tools > Network tab
-3. Verify API calls are cached appropriately
-4. Test manual refresh functionality
+#### Verify Static Data Integration
+1. Run Jekyll build: `bundle exec jekyll build`
+2. Check publications page locally: `http://localhost:4000/publications/`
+3. Verify publication counts match sync script output
+4. Test search and filter functionality
 
 ## Testing & Validation
 

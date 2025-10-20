@@ -1,0 +1,165 @@
+# Academic Experience and Positions
+# Constitutional Requirements: Professional Focus, Content-Driven Development
+
+positions:
+  - id: "bsu_assistant_prof"
+    position: "Assistant Professor"
+    institution: "Boise State University"
+    department: "Geosciences Department"
+    start_date: "2018-08-01"
+    end_date: null # Current position
+    location: "Boise, Idaho, USA"
+    type: "employment"
+    responsibilities:
+      - "Research in seismic wave propagation and geophysical signal processing"
+      - "Teaching undergraduate and graduate courses in geophysics"
+      - "Mentoring graduate students in computational geophysics research"
+      - "Developing field instrumentation and data acquisition methods"
+      - "Collaborative research with national and international institutions"
+    achievements:
+      - "Established active research program in environmental seismology"
+      - "Published peer-reviewed research in leading geophysics journals"
+      - "Secured external research funding for geophysical instrumentation"
+      - "Developed innovative curriculum for computational geophysics"
+    current: true
+
+  - id: "postdoc_example"
+    position: "Postdoctoral Researcher" 
+    institution: "Previous Institution" # Update with actual details
+    department: "Department Name"
+    start_date: "2016-09-01"
+    end_date: "2018-07-31"
+    location: "Location, Country"
+    type: "employment"
+    responsibilities:
+      - "Advanced research in seismic interferometry methods"
+      - "Development of signal processing algorithms"
+      - "Collaboration on multi-institutional research projects"
+      - "Mentoring of undergraduate research assistants"
+    achievements:
+      - "Key publications in ambient noise seismology"
+      - "Developed open-source software tools"
+      - "Presented research at international conferences"
+    current: false
+
+education:
+  - id: "phd_degree"
+    degree: "Ph.D. in Geophysics"
+    institution: "University Name" # Update with actual details
+    department: "Geophysics Department"
+    start_date: "2012-09-01"
+    end_date: "2016-08-31"
+    location: "Location, Country"
+    type: "education"
+    thesis_title: "Advanced Methods in Seismic Interferometry" # Update with actual title
+    advisor: "Dr. Advisor Name"
+    responsibilities:
+      - "Doctoral research in seismic wave theory and applications"
+      - "Development of novel computational methods"
+      - "Teaching assistant for undergraduate geophysics courses"
+      - "Field work and data collection campaigns"
+    achievements:
+      - "Dissertation research published in top-tier journals"
+      - "Outstanding graduate student research award"
+      - "Geophysical Society student travel grants"
+    current: false
+
+  - id: "ms_degree"
+    degree: "M.S. in Geophysics"
+    institution: "University Name" # Update with actual details
+    department: "Geophysics Department" 
+    start_date: "2010-09-01"
+    end_date: "2012-08-31"
+    location: "Location, Country"
+    type: "education"
+    thesis_title: "Applications of Seismic Analysis Methods" # Update with actual title
+    advisor: "Dr. Advisor Name"
+    responsibilities:
+      - "Master's research in applied seismology"
+      - "Coursework in advanced geophysics and mathematics"
+      - "Research assistant on funded projects"
+    achievements:
+      - "Thesis research contributed to published studies"
+      - "Academic excellence recognition"
+    current: false
+
+  - id: "bs_degree"
+    degree: "B.S. in Geophysics"
+    institution: "University Name" # Update with actual details
+    department: "Geosciences Department"
+    start_date: "2006-09-01"
+    end_date: "2010-05-31"
+    location: "Location, Country"
+    type: "education"
+    responsibilities:
+      - "Undergraduate coursework in geophysics and physics"
+      - "Research experience through undergraduate programs"
+      - "Field camp and practical geophysics training"
+    achievements:
+      - "Graduated with honors"
+      - "Undergraduate research publications"
+      - "Geophysics society student membership"
+    current: false
+
+# Professional Development
+visiting_positions:
+  - id: "visiting_scholar"
+    position: "Visiting Scholar"
+    institution: "International Institution" # Update with actual details
+    start_date: "2019-06-01"
+    end_date: "2019-08-31"
+    location: "Location, Country"
+    type: "visiting"
+    responsibilities:
+      - "Collaborative research on advanced seismic methods"
+      - "International research network development"
+      - "Cross-cultural academic exchange"
+    achievements:
+      - "Established ongoing international collaboration"
+      - "Joint research publication initiated"
+    current: false
+
+# Service and Leadership
+service_roles:
+  - role: "Editorial Board Member"
+    organization: "Geophysics Journal" # Update with actual details
+    start_date: "2020-01-01"
+    end_date: null
+    current: true
+    description: "Peer review and editorial guidance for geophysics research"
+
+  - role: "Conference Session Organizer"
+    organization: "Annual Geophysics Conference"
+    start_date: "2019-01-01" 
+    end_date: "2021-12-31"
+    current: false
+    description: "Organized technical sessions on environmental seismology"
+
+# Professional Memberships
+memberships:
+  - organization: "American Geophysical Union (AGU)"
+    start_date: "2010-01-01"
+    current: true
+  - organization: "Society of Exploration Geophysicists (SEG)"
+    start_date: "2012-01-01"
+    current: true
+  - organization: "Seismological Society of America (SSA)"
+    start_date: "2014-01-01"
+    current: true
+
+# Awards and Recognition
+awards:
+  - title: "Outstanding Early Career Researcher Award"
+    organization: "Geophysics Society"
+    date: "2021-05-15"
+    description: "Recognition for innovative contributions to computational geophysics"
+
+  - title: "Excellence in Teaching Award"
+    organization: "Boise State University"
+    date: "2020-05-01"
+    description: "Awarded for outstanding undergraduate and graduate instruction"
+
+  - title: "Best Student Paper Award"
+    organization: "International Geophysics Conference"
+    date: "2016-03-20"
+    description: "Recognition for doctoral research presentation"

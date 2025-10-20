@@ -1,85 +1,118 @@
-# API Contracts: Professional Website
+# Data Contracts: Professional Website
 
 **Created**: 2025-10-19  
-**Purpose**: Define API interfaces for website functionality
+**Updated**: 2025-10-20  
+**Purpose**: Define data structures and sync processes for website functionality
 
-## SciXplorer API Integration
+## Static Data Architecture
 
-### Publications Endpoint
+The website uses static Jekyll data files instead of real-time API calls. Data is updated via sync scripts that fetch from external APIs and generate static files.
 
-**Base URL**: `https://api.adsabs.harvard.edu/v1/`
+## NASA ADS API Integration (Sync Script Only)
 
-#### Get Publications Library
+### Publications Sync Process
+
+**Sync Script**: `./sync-ads-data.sh`  
+**API Base URL**: `https://api.adsabs.harvard.edu/v1/`  
+**Output Files**: `_data/publications.yml`, `_data/publications.json`, `_data/metrics.json`
+
+#### NASA ADS Search Endpoint (Used by Sync Script)
 ```http
-GET /biblib/libraries/{library_id}
-Authorization: Bearer {api_token}
+GET /search/q
+Authorization: Bearer {ADS_TOKEN}
 Content-Type: application/json
 ```
 
-**Parameters**:
-- `library_id`: User's publication library ID (string, required)
-- `sort`: Sort order (string, optional, default: "date desc")
-- `start`: Pagination offset (integer, optional, default: 0)  
-- `rows`: Results per page (integer, optional, default: 20, max: 200)
+**Parameters** (used in sync script):
+- `q`: Search query (e.g., `author:"Mikesell, T Dylan"`)
+- `fl`: Fields to return (bibcode,title,author,pub,year,citation_count,doi,abstract)
+- `sort`: Sort order (date desc)
+- `rows`: Results per page (default: 200)
 
-**Response**:
+**API Response**:
 ```json
 {
-  "documents": [
-    {
-      "bibcode": "2023JGRA..128e1234S",
-      "title": ["Research Paper Title"],
-      "author": ["Author, First", "Author, Second"],
-      "pub": "Journal of Geophysical Research: Atmospheres",
-      "pubdate": "2023-05-00",
-      "abstract": "Full abstract text...",
-      "citation_count": 15,
-      "doi": ["10.1029/2023JA001234"],
-      "arxiv_class": ["physics.geo-ph"],
-      "keyword": ["seismology", "cryosphere", "glaciers"],
-      "aff": ["University Example, Department"]
-    }
-  ],
-  "numFound": 85,
-  "start": 0
-}
-```
-
-#### Get Citation Metrics
-```http
-GET /metrics/{bibcode}
-Authorization: Bearer {api_token}
-```
-
-**Response**:
-```json
-{
-  "citation stats": {
-    "total number of citations": 15,
-    "number of citing papers": 12,
-    "average citations per year": 3.75,
-    "median citations per year": 2.5,
-    "normalized paper count": 1.0,
-    "total normalized citations": 8.2,
-    "h": 1,
-    "g": 1,
-    "i10": 0,
-    "i100": 0,
-    "tori": 2.1,
-    "riq": 0.95
+  "response": {
+    "docs": [
+      {
+        "bibcode": "2024FRSPT...4.1510Z",
+        "title": ["Research Paper Title"],
+        "author": ["Author, First", "Mikesell, T. Dylan"],
+        "pub": "Frontiers in Space Technologies", 
+        "year": "2024",
+        "citation_count": 15,
+        "doi": ["10.3389/frspt.2024.1510635"],
+        "abstract": "Full abstract text..."
+      }
+    ],
+    "numFound": 46
   }
+```
+
+## Generated Static Data Files
+
+### Publications Data Structure
+
+**File**: `_data/publications.yml`
+```yaml
+# Auto-generated from NASA ADS API on 2025-10-19T18:48:02Z
+last_updated: "2025-10-19T18:48:02Z"
+total_count: 46
+publications:
+  - title: "Research Paper Title"
+    authors: "Author, First, Mikesell, T. Dylan, Author, Third"
+    venue: "Journal Name"
+    year: 2024
+    citations: 15
+    doi: "10.1000/journal.2024.123456"
+    bibcode: "2024JName.123..456A"
+    abstract: "Full abstract text..."
+    keywords: ["keyword1", "keyword2"]
+```
+
+**File**: `_data/metrics.json`
+```json
+{
+  "total_publications": 46,
+  "total_citations": 1110,
+  "h_index": 16,
+  "recent_publications": 11,
+  "years_active": "2012-2024",
+  "avg_citations_per_paper": 24.1,
+  "most_cited": {
+    "title": "Most Cited Paper Title",
+    "citations": 89,
+    "year": 2018
+  },
+  "last_updated": "2025-10-19T18:48:02Z"
 }
 ```
 
-### Grants/Funding Integration
+### Manual Data Files
 
-#### Get Grants Library (if available)
-```http
-GET /biblib/libraries/{grants_library_id}
-Authorization: Bearer {api_token}
+**File**: `_data/profile.yml`
+```yaml
+name: "Dylan Mikesell"
+title: "Research Geophysicist"
+affiliation: "Boise State University"
+orcid: "0000-0000-0000-0000"  # Update with real ORCID
+email: "research@example.com"  # Update with real email
+bio: "Professional bio text..."
 ```
 
-**Note**: If SciXplorer doesn't support grants, implement as Jekyll data files with manual updates.
+### Sync Script Implementation
+
+**Script**: `sync-ads-data.sh`
+- Fetches publications from NASA ADS API using author search
+- Processes JSON response with `jq` 
+- Generates Jekyll-compatible YAML and JSON data files
+- Calculates citation metrics and publication statistics
+- Updates last_updated timestamps
+
+**Requirements**:
+- Environment variable: `ADS_TOKEN` (NASA ADS API token)
+- Dependencies: `curl`, `jq`
+- Output: Updates `_data/publications.yml`, `_data/metrics.json`, `_data/featured_publications.json`
 
 ## Contact Form API
 
@@ -122,49 +155,42 @@ Content-Type: application/json
 }
 ```
 
-## Website API Endpoints (Client-Side)
+## Jekyll Data Access (Client-Side)
 
-### Get Cached Publications
+### Access Publications Data
 ```javascript
-GET /api/publications.json
+// Publications data available via Jekyll site.data
+// Accessed in Liquid templates as: site.data.publications
 ```
 
-**Response**:
+**Jekyll Data Structure**:
+```yaml
+# Available as site.data.publications
+last_updated: "2025-10-19T18:48:02Z"
+total_count: 46
+publications: [...]
+```
+
+### Access Metrics Data
+```javascript  
+// Metrics available via Jekyll site.data
+// Accessed in Liquid templates as: site.data.metrics
+```
+
+**Jekyll Data Structure**:
 ```json
 {
-  "publications": [...], // SciXplorer format
-  "cached_at": "2025-10-19T10:30:00Z",
-  "expires_at": "2025-10-20T10:30:00Z",
-  "total_count": 85
+  "total_publications": 46,
+  "total_citations": 1110,
+  "h_index": 16,
+  "last_updated": "2025-10-19T18:48:02Z"
 }
 ```
 
-### Get Research Projects
+### Access Profile Data
 ```javascript
-GET /api/projects.json  
-```
-
-**Response**:
-```json
-{
-  "projects": [
-    {
-      "id": "proj_001",
-      "title": "Project Title",
-      "description": "Project description...",
-      "status": "active",
-      "featured": true,
-      "publications": ["2023JGRA..128e1234S"],
-      "funding": ["NSF-12345"],
-      "collaborators": [...]
-    }
-  ]
-}
-```
-
-### Get Profile Data
-```javascript
-GET /api/profile.json
+// Profile data available via Jekyll site.data
+// Accessed in Liquid templates as: site.data.profile
 ```
 
 **Response**:
@@ -210,40 +236,39 @@ GET /api/profile.json
 }
 ```
 
-## Rate Limiting
+## Rate Limits & Security
 
-### SciXplorer API
-- **Limit**: 5,000 requests/day per API key
+### NASA ADS API (Sync Script)
+- **Limit**: 5,000 requests/day per API token
 - **Burst**: 10 requests/second
-- **Retry**: Exponential backoff on 429 responses
+- **Usage**: Manual sync script execution only
 
 ### Contact Form
-- **Limit**: 5 submissions/hour per IP address
+- **Limit**: 5 submissions/hour per IP address  
 - **Protection**: reCAPTCHA v3 integration
 - **Spam**: Content filtering and honeypot fields
 
-## Caching Strategy
+## Static Site Performance
 
-### Browser Cache Headers
-```http
-Cache-Control: public, max-age=3600
-ETag: "hash-of-content"
-Last-Modified: Thu, 19 Oct 2025 10:30:00 GMT
-```
+### Jekyll Build Optimization
+- Static data files for optimal loading speed
+- No runtime API dependencies
+- Pre-generated content during build process
+- Optimized for GitHub Pages hosting
 
-### API Response Caching
-- **Publications**: 24 hours (daily citation updates)
-- **Profile**: 7 days (rarely changes)
-- **Projects**: 1 hour (active development)
-- **Contact form**: No cache (always fresh)
+### Content Freshness
+- **Publications**: Updated via manual sync script execution
+- **Profile**: Manual updates to `_data/profile.yml`
+- **Projects**: Manual updates to `_data/projects.yml` 
+- **Contact form**: Real-time submission (no static data)
 
 ## Security Considerations
 
-### API Key Management
-- Store in GitHub repository secrets
-- Access via environment variables during build
-- Never expose in client-side code
-- Rotate quarterly or on compromise
+### API Token Management (Sync Script)
+- Store NASA ADS token as environment variable (`ADS_TOKEN`)
+- Never commit tokens to repository
+- Use only for local sync script execution
+- Rotate periodically for security
 
 ### Contact Form Security
 - CSRF protection with tokens
@@ -252,11 +277,10 @@ Last-Modified: Thu, 19 Oct 2025 10:30:00 GMT
 - Email validation and domain checking
 - Content filtering for spam detection
 
-### CORS Configuration
-```http
-Access-Control-Allow-Origin: https://dylanmikesell.github.io
-Access-Control-Allow-Methods: GET, POST
-Access-Control-Allow-Headers: Content-Type, Authorization
-```
+### Static Site Security
+- No client-side API keys or secrets
+- Content served via HTTPS (GitHub Pages)
+- No runtime database or API dependencies
+- Secure static file hosting
 
-All API contracts follow REST conventions and include proper error handling, security measures, and performance optimizations to meet constitutional requirements.
+All data contracts follow Jekyll conventions and static site best practices to meet constitutional requirements for performance, security, and maintainability.

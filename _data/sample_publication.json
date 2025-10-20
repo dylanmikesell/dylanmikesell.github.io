@@ -1,0 +1,16 @@
+{
+  "last_updated": "2025-10-19T18:43:05Z",
+  "total_count": 1,
+  "publications": [
+    {
+      "title": "The Luna Analog Facility testbeds (ESA, EAC): contemporary characterization work of highland (lunar) and mare (EAC-1) lunar regolith simulants",
+      "authors": "Zemeny, Aliz, Sardisco, Lorenza, Quinteros, Santiago, Mikesell, T. Dylan, Pirrie, Duncan, Rose, Libby, Cowley, Aidan, Manick, Kamini",
+      "venue": "Frontiers in Space Technologies",
+      "year": "2024",
+      "citations": 0,
+      "doi": "10.3389/frspt.2024.1510635",
+      "abstract": "The Luna Analog Facility, a joint ESA-DLR endeavour, consists of three components and spans an area of 1,000 m2, providing testbeds of simulated lunar environments. The main sections within the facility are a large area filled with lunar mare regolith simulant resembling mare regions and a smaller, individual \"Dust Chamber\". The latter replicates highland conditions and contains approximately 20 tons of material, specifically simulating the fine-particle lunar regolith portion up to 250 µm. The Dust Chamber serves as a platform for testing various technologies, such as mechanical tools, robotic operations, in-situ resource utilization activities, and astronaut attire, as well as different procedures including rover and astronaut tasks. This work represents the geotechnical, geochemical and mineralogical characterization of the Lumina Sustainable Materials Ltd. 2023 batch highland simulants, from which Lunar250 is intended for use in the Luna Dust Chamber. Additionally, this work provides new results for ESA's mare simulant, EAC-1. We provide data on particle size distribution, particle shape, abrasivity, density, water content, major and trace element geochemistry and modal mineralogy. As the simulants in the Luna Facility will be constantly overseen, this work organized by the Vulcan Facility (ESA) intends to support the monitoring of the geotechnical property variations of the simulants over time. Ultimately, we analysed several properties with different tools to emphasize how different methods and instruments affect the variability and reliability of the results.",
+      "bibcode": "2024FrST....510635Z"
+    }
+  ]
+}

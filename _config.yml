@@ -1,0 +1,82 @@
+# Jekyll Configuration for Dylan Mikesell Professional Website
+# Constitutional Requirements: Performance (<3s), Mobile-First, Accessibility (90+ Lighthouse)
+
+# Site Settings
+title: "Dylan Mikesell"
+subtitle: "Research Geophysicist"
+description: "Professional research website showcasing geophysical research expertise, publications, and academic opportunities"
+baseurl: ""
+url: "https://dylanmikesell.github.io"
+author: "Dylan Mikesell"
+
+# Social and Academic Profiles
+orcid: "0000-0000-0000-0000"  # Replace with actual ORCID
+email: "research@example.com"  # Replace with actual email
+github_username: "dylanmikesell"
+
+# Performance Optimization
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]
+  blanklines: false
+
+# Jekyll Configuration
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+timezone: America/Denver
+
+# Sass Configuration for Mobile-First Design
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Plugins for GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-compress-images
+
+# SEO and Meta
+lang: en-US
+logo: /assets/images/logo.png
+google_analytics: # Will be configured in production
+
+# Publication data is now managed via static files in _data/
+# To update publications, run: ./sync-ads-data.sh
+
+# Mobile-First and Accessibility
+responsive_image:
+  template: _includes/responsive-image.html
+  default_quality: 85
+  sizes:
+    - width: 320
+    - width: 768
+    - width: 1024
+
+# Build Settings
+exclude:
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - README.md
+  - .gitignore
+  - .github/
+  - specs/
+
+# Security Headers for Production
+webrick:
+  headers:
+    X-Content-Type-Options: "nosniff"
+    X-Frame-Options: "DENY"
+    X-XSS-Protection: "1; mode=block"
