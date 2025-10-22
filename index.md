@@ -15,16 +15,18 @@ My research program centers on extracting maximum information from seismic recor
 - **Volcano Seismology**: Advancing volcanic monitoring through innovative seismic analysis techniques
 - **Machine Learning Applications**: Applying computational intelligence to geophysical data interpretation
 
-## Research Opportunities
+## Research Collaboration
 
-I actively collaborate with students and researchers on computational geophysics projects. If you're interested in:
+I actively collaborate with students and researchers on a variety of Earth and Planetary science projects. If you're interested in
 
-- Graduate research in environmental seismology or computational geophysics
-- Collaborative research projects in seismic analysis methods
-- Postdoctoral opportunities in geophysical signal processing
+- near-surface seismic imaging and monitoring
+- environmental seismology or cryoseismology
+- seismic interferometry
+- ionospheric seismology
+- geophysics and geotechnics on the moon
 
-Please [contact me]({{ '/contact/' | relative_url }}) to discuss potential opportunities.
+then please [contact me]({{ '/contact/' | relative_url }}) to discuss potential opportunities.
 
 ---
 
-*Advancing geophysical understanding through innovative signal processing, rigorous field work, and collaborative research that bridges theory and practice.*
+<!-- *Advancing geophysical understanding through innovative signal processing, rigorous field work, and collaborative research that bridges theory and practice.* -->

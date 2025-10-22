@@ -1,0 +1,36 @@
+# Contact Information
+# Personal contact details are not publicly shared
+# All inquiries should use the contact form
+
+# Formspree endpoint for contact form
+formspree_endpoint: "https://formspree.io/f/mrbywqla"
+
+# Social Media Profiles
+social_media:
+  github: "dylanmikesell"
+  linkedin: "dylan-mikesell"  # Update with your LinkedIn username
+  twitter: ""  # Optional: Add Twitter/X handle if desired
+
+# Academic Profiles
+academic_profiles:
+  orcid: "0000-0000-0000-0000"  # Update with your actual ORCID
+  google_scholar: ""  # Update with your Google Scholar ID
+  researchgate: "Dylan-Mikesell"  # Update with your ResearchGate profile name
+
+# Response expectations
+response_time: "I typically respond to inquiries within 2-3 business days."
+
+# Contact preferences
+inquiry_types:
+  - value: "general"
+    label: "General Inquiry"
+  - value: "research"
+    label: "Research Collaboration"
+  - value: "student"
+    label: "Prospective Student"
+  - value: "funding"
+    label: "Funding/Grant Opportunity"
+  - value: "speaking"
+    label: "Speaking Engagement"
+  - value: "other"
+    label: "Other"
