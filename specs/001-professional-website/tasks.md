@@ -118,21 +118,21 @@ Jekyll static website structure - all paths relative to repository root.
 
 ---
 
-## Phase 6: User Story 2 - Student and Academic Recruitment (Priority: P2)
+## Phase 6: User Story 2 - Collaborator Recruitment & Opportunities (Priority: P2)
 
-**Goal**: Provide information for prospective students and collaborators about research opportunities
+**Goal**: Provide information for prospective collaborators (students, postdocs, visiting researchers, industry partners) about research and collaboration opportunities
 
-**Independent Test**: Browse research opportunities, view current projects, assess academic decision-making information
+**Independent Test**: Browse collaboration opportunities, view current projects, assess decision-making information for all collaborator types
 
-- [ ] T051 [US2] Create _data/students.yml with current research opportunities and application processes
-- [ ] T052 [US2] Create pages/students.md with student recruitment information and mentorship approach
-- [ ] T053 [P] [US2] Create _includes/opportunity-card.html component for research position listings
+- [ ] T051 [US2] Create _data/collaborators.yml with current opportunities and application/collaboration processes
+- [ ] T052 [US2] Create pages/collaborators.md with recruitment, mentorship, and collaboration approach for students, postdocs, visiting researchers, and industry partners
+- [ ] T053 [P] [US2] Create _includes/opportunity-card.html component for position and collaboration listings
 - [ ] T054 [P] [US2] Add research project details with collaboration opportunities to research pages
-- [ ] T055 [US2] Implement application process information and contact methods for students
-- [ ] T056 [P] [US2] Create student success stories and mentorship philosophy sections
+- [ ] T055 [US2] Implement application/collaboration process information and contact methods for all collaborator types
+- [ ] T056 [P] [US2] Create collaborator success stories and mentorship/collaboration philosophy sections
 
 **US2 Testing**:
-- [ ] T057 [P] [US2] Verify student information is easily discoverable and complete
+- [ ] T057 [P] [US2] Verify collaborator information is easily discoverable and complete
 
 ---
 

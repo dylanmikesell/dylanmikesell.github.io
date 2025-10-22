@@ -26,16 +26,16 @@ expertise_areas:
 
 # Bio Summary (Professional Overview)
 bio_summary: |
-  Dylan Mikesell is a research geophysicist specializing in seismic wave propagation, 
-  ambient noise analysis, and geophysical signal processing. His research focuses on 
-  developing innovative methods for monitoring subsurface changes using continuous 
+  I am a research geophysicist specializing in seismic wave propagation, 
+  ambient noise analysis, and geophysical signal processing. My past research has focused on 
+  developing innovative methods to monitor subsurface changes using continuous 
   seismic recordings and advanced signal processing techniques.
   
-  Currently an Assistant Professor in the Geosciences Department at Boise State University, 
-  Dylan's work bridges fundamental seismology with practical applications in environmental 
-  monitoring, volcanic surveillance, and subsurface characterization. His research group 
-  develops computational tools and field methodologies that advance our understanding 
-  of Earth's dynamic processes.
+  I am currently a research scientist at Norwegian Geotechnical Institute (NGI), where 
+  my work bridges from fundamental seismology to practical applications in environmental
+  monitoring and subsurface characterization. I am currently focusing on improving near-surface 
+  seismic methods for geotechnical and environmental applications, as well as investigations into
+  space resource utilization and signals in Earth's ionosphere from seismic sources at Earth's surface.
 
 bio_extended: |
   Dr. Mikesell's research program focuses on extracting maximum information from seismic 

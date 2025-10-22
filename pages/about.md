@@ -1,36 +1,14 @@
 ---
 layout: page
 title: "About"
-subtitle: "Research Overview and Academic Background"
-description: "Detailed overview of Dylan Mikesell's research expertise, academic background, and contributions to computational geophysics and environmental monitoring."
+subtitle: ""
+description: ""
 permalink: /about/
 ---
 
-## Research Overview
+<!-- ## Overview -->
 
-My research focuses on developing new ways to listen to the Earth and create images of the world beneath our feet. Using techniques similar to a medical ultrasound, I analyze sound and seismic waves to understand the processes that shape our planet. This work has a wide range of applications, from monitoring natural hazards like earthquakes, volcanoes, and landslides, to tracking the health of glaciers and ice sheets. By interpreting these subtle vibrations, my research helps us better understand environmental changes, improve the safety of critical infrastructure like dams, and even develop new methods for exploring other planets like the Moon and Mars.
-
-### Core Research Areas
-
-**Cryosphere Sciences**
-
-My work in the cryosphere involves listening to the subtle sounds of glaciers and ice sheets to understand their health and behavior. Just as a doctor uses a stethoscope, we use seismic sensors to monitor the vibrations caused by ice cracking, water flowing beneath glaciers, and the massive shifts that lead to calving events or surges. This research helps us track how these critical parts of our climate system are responding to a warming world. We also develop new non-invasive techniques, like using lasers to perform "ultrasounds" on ice cores, which allows us to read the history of past climates trapped within the ice without damaging the samples.
-
-**Solid Earth Sciences**
-
-In solid earth sciences, my focus is on understanding the dynamic processes that lead to natural hazards. By analyzing seismic waves from earthquakes, volcanoes, and landslides, we can create detailed images of the Earth's crust and pinpoint the sources of these events. This work is akin to geological CAT scanning, where we use the planet's own vibrations to map out faults, magma chambers, and unstable slopes. The goal is to better understand the physics behind these phenomena to improve our ability to assess risks and contribute to safer communities.
-
-**Atmospheric and Space Sciences**
-
-My research also extends upwards into the highest reaches of our atmosphere. Major events on the ground—such as volcanic eruptions, earthquakes, and tsunamis—send powerful waves of pressure and sound not just through the ground, but also up into the ionosphere, the electrically charged upper layer of our atmosphere. By using GPS and other satellite signals, we can detect the ripples these events cause hundreds of kilometers above the surface. Studying these atmospheric disturbances provides a unique, sky-high vantage point to observe and understand the scale and power of events on Earth.
-
-**Planetary Sciences**
-
-The same geophysical tools we use to study Earth can be adapted to explore other worlds. My work in planetary science focuses on preparing for future human and robotic exploration of the Moon and Mars. By studying "lunar simulants" — materials that mimic the properties of moon dust and rock — in the lab, we can test how seismic waves travel through them. This helps us design better instruments and methods for rovers and landers to safely characterize the ground they land on, understand the subsurface, and assess the resources available for future off-world habitats.
-
-**Data Analysis and Imaging Methods**
-
-Underpinning all of these areas is a focus on developing innovative methods to analyze complex data. Geophysical data is often messy, filled with background noise and overlapping signals. My research involves creating new computational and mathematical tools to cut through this noise and extract clear information. This includes work in pioneering fields like "seismic interferometry," which turns ambient, background vibrations (from sources like ocean waves) into a powerful signal we can use to create images of the subsurface. By developing smarter algorithms and leveraging machine learning, we can turn raw data into high-resolution insights about our planet and beyond.
+I am scientific researcher at the Norwegian Geotechnical Institute (NGI) in Oslo, Norway. I sit in a group called Remote Sensing and Geophysics within the Natural Hazards Division at NGI. Prior to NGI, I was a professor in the Department of Geosciences at Boise State University. I am an applied geophysicists by education and training, with 20 years of experience focusing on seismic methods for the imaging and monitoring of Earth's near-surface. I am interested in a number of other geophysical things, which you can read about on my [Research]({{ '/research/' | relative_url }}) page.
 
 ## Professional Background
 
@@ -50,35 +28,24 @@ Underpinning all of these areas is a focus on developing innovative methods to a
 
 ## Research Philosophy
 
-My approach to research emphasizes:
+My approach to research and teaching emphasizes:
 
-- **Innovation in Methodology**: Developing new analytical approaches that push the boundaries of what we can learn from geophysical data
-- **Practical Applications**: Ensuring research contributions address real-world problems in environmental monitoring and hazard assessment
-- **Collaborative Science**: Working across disciplinary boundaries to tackle complex Earth system problems
+- **Innovation in Methodology**: Developing new approaches and technology that push the boundaries of what we can learn from geophysical data
+- **Practical Applications**: Ensuring research contributions address real-world problems in environmental monitoring, hazard assessment, the energy transition, and space resources
+- **Collaborative Science**: Working across disciplinary boundaries to tackle complex Earth and Planetary system problems
 - **Open Science**: Promoting reproducible research through open-source software development and data sharing
-- **Student Mentoring**: Training the next generation of computational geophysicists through hands-on research experience
+- **Student Mentoring**: Training the next generation of geoscientists and engineers through hands-on research experiences -- in the lab, at the computer, or in the field
 
 ## Professional Contributions
 
 **Research Impact**  
-My work has contributed to advances in seismic interferometry methods, environmental monitoring applications, and computational geophysics tools. Research findings have been published in leading geophysics journals and presented at international conferences.
+My work has contributed to advances in seismic interferometry methods, environmental monitoring applications, and geophysics analysis tools. Research findings have been published in leading geophysics journals and presented at international conferences. You can learn more about this on my [Publications]({{ '/publications/' | relative_url }}) page.
 
 **Teaching and Mentoring**  
-I am committed to excellence in undergraduate and graduate education, developing innovative curricula that prepare students for careers in computational geophysics. I actively mentor graduate students conducting research in environmental seismology and geophysical data analysis.
+I am still committed to excellence in undergraduate and graduate education, developing innovative curricula that prepare students for careers in applied geophysics and geospatial data analysis. I still actively mentor graduate students conducting research around the world. You can learn more about this on my [Collaborators]({{ '/collaborators/' | relative_url }}) page.
 
 **Service to the Community**  
 I contribute to the scientific community through peer review, conference organization, and professional society activities. I am committed to promoting diversity and inclusion in the geosciences and supporting early-career researchers.
-
-## Current Projects
-
-**Ambient Noise Monitoring Systems**  
-Developing real-time analysis capabilities for continuous ambient noise monitoring with applications to environmental and volcanic systems.
-
-**Machine Learning for Geophysical Pattern Recognition**  
-Applying deep learning methods to automate the detection and classification of geophysical signals in continuous data streams.
-
-**Multi-Scale Environmental Monitoring**  
-Integrating seismic methods with other geophysical techniques for comprehensive environmental monitoring capabilities.
 
 ## Professional Memberships and Activities
 
@@ -90,4 +57,16 @@ Integrating seismic methods with other geophysical techniques for comprehensive 
 
 ---
 
-*For detailed information about specific research projects, publications, or collaboration opportunities, please see the [Research]({{ '/research/' | relative_url }}) and [Publications]({{ '/publications/' | relative_url }}) sections, or [contact me]({{ '/contact/' | relative_url }}) directly.*
+*For detailed information about specific research projects, publications, or collaboration opportunities, please see the [Research]({{ '/research/' | relative_url }}), [Publications]({{ '/publications/' | relative_url }}), and [Collaborators]({{ '/collaborators/' | relative_url }}) sections, or [contact me]({{ '/contact/' | relative_url }}) directly.*
+
+
+<!-- ## Current Projects
+
+**Ambient Noise Monitoring Systems**  
+Developing real-time analysis capabilities for continuous ambient noise monitoring with applications to environmental and volcanic systems.
+
+**Machine Learning for Geophysical Pattern Recognition**  
+Applying deep learning methods to automate the detection and classification of geophysical signals in continuous data streams.
+
+**Multi-Scale Environmental Monitoring**  
+Integrating seismic methods with other geophysical techniques for comprehensive environmental monitoring capabilities. -->

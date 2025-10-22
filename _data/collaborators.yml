@@ -1,0 +1,29 @@
+# Collaborators Data
+# Opportunities for students, postdocs, visiting researchers, and industry partners
+
+collaborators:
+  - name: "Student Opportunities"
+    type: "student"
+    description: "Graduate and undergraduate research positions available. See research projects for current openings."
+    application_process: "Contact via form or email with CV and research interests."
+    requirements: ["Interest in geophysics", "Relevant coursework", "Motivation for research"]
+
+  - name: "Postdoctoral Positions"
+    type: "postdoc"
+    description: "Postdoctoral research opportunities in seismic analysis, environmental monitoring, and machine learning applications."
+    application_process: "Send CV, cover letter, and research proposal via contact form."
+    requirements: ["PhD in geophysics or related field", "Strong publication record", "Experience with seismic data analysis"]
+
+  - name: "Visiting Researchers"
+    type: "visiting"
+    description: "Short-term collaboration opportunities for visiting scholars and researchers."
+    application_process: "Submit collaboration proposal via contact form."
+    requirements: ["Active research program", "Interest in joint projects"]
+
+  - name: "Industry Partnerships"
+    type: "industry"
+    description: "Collaborative projects with industry partners in geotechnical, environmental, and energy sectors."
+    application_process: "Contact to discuss partnership opportunities."
+    requirements: ["Relevant industry experience", "Project proposal or inquiry"]
+
+last_updated: "2025-10-22"

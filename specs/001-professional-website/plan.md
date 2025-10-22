@@ -5,7 +5,7 @@
 
 ## Summary
 
-Create a professional research website for Dylan Mikesell targeting three key audiences: employers/collaborators, prospective students, and research funders. The site will use static data files updated via NASA ADS sync script to display publications and grants data while maintaining constitutional requirements for performance (<3s load), accessibility (90+ Lighthouse scores), and mobile-first design using Jekyll on GitHub Pages.
+Create a professional research website for Dylan Mikesell targeting three key audiences: employers/collaborators, prospective collaborators (students, postdocs, visiting researchers, industry partners), and research funders. The site will use static data files updated via NASA ADS sync script to display publications and grants data while maintaining constitutional requirements for performance (<3s load), accessibility (90+ Lighthouse scores), and mobile-first design using Jekyll on GitHub Pages.
 
 ## Technical Context
 
@@ -54,7 +54,7 @@ dylanmikesell.github.io/
 │   ├── profile.yml          # Personal/professional info
 │   ├── experience.yml       # Academic/work history
 │   ├── projects.yml         # Research projects
-│   └── students.yml         # Student opportunities
+│   └── collaborators.yml    # Collaborator opportunities (students, postdocs, visiting researchers, industry)
 ├── _includes/               # Reusable components
 │   ├── header.html          # Site navigation
 │   ├── footer.html          # Site footer
@@ -80,7 +80,7 @@ dylanmikesell.github.io/
 │   ├── about.md            # Research overview
 │   ├── publications.md     # Dynamic publications list
 │   ├── research.md         # Research projects
-│   ├── students.md         # Student opportunities
+│   ├── collaborators.md    # Collaborator opportunities (students, postdocs, visiting researchers, industry)
 │   └── contact.md          # Contact information and form
 ├── .github/                 # GitHub configuration
 │   ├── workflows/          # CI/CD pipelines
@@ -160,7 +160,7 @@ dylanmikesell.github.io/
 
 #### Phase D: Interactive Features (Week 4)
 - Contact form with validation
-- Student opportunities section
+- Collaborator opportunities section (students, postdocs, visiting researchers, industry)
 - Search and filter functionality
 - Google Analytics integration for visitor behavior tracking
 - Final performance and accessibility optimization
@@ -197,7 +197,7 @@ dylanmikesell.github.io/
 - ✅ Cross-browser compatibility (Chrome, Firefox, Safari, Edge)
 
 **User Experience Goals** (from specification):
-- ✅ Students identify research opportunities within 2 minutes
+- ✅ Collaborators identify research opportunities within 2 minutes
 - ✅ Funders locate publications/metrics within 90 seconds  
 - ✅ 95% of visitors identify research field within 10 seconds
 - ✅ Mobile users complete all core tasks via touch navigation

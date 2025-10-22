@@ -1,0 +1,12 @@
+<!-- Opportunity Card Component -->
+<div class="opportunity-card">
+  <h2>{{ collab.name }}</h2>
+  <p><strong>Type:</strong> {{ collab.type | capitalize }}</p>
+  <p>{{ collab.description }}</p>
+  <p><strong>Application Process:</strong> {{ collab.application_process }}</p>
+  <ul>
+    {% for req in collab.requirements %}
+    <li>{{ req }}</li>
+    {% endfor %}
+  </ul>
+</div>

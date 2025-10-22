@@ -5,6 +5,12 @@
 **Status**: Draft  
 **Input**: User description: "Create a professional website for Dylan Mikesell showcasing expertise, experience, and contact information"
 
+## Clarifications
+
+### Session 2025-10-22
+- Q: Should the "Students" page be removed or expanded to "Collaborators"?
+  → A: Expand to "Collaborators" page including students, postdocs, visiting researchers, and industry partners. Student recruitment remains, but broader collaboration opportunities are now included.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Professional Profile Discovery (Priority: P1)

@@ -2,42 +2,11 @@
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-content">
-      
-      <!-- Contact Information -->
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <div class="contact-info">
-          {% if site.email %}
-          <p>
-            <a href="mailto:{{ site.email }}" class="contact-link">
-              <span class="sr-only">Email: </span>
-              {{ site.email }}
-            </a>
-          </p>
-          {% endif %}
-          
-          {% if site.data.contact.phone %}
-          <p>
-            <a href="tel:{{ site.data.contact.phone }}" class="contact-link">
-              <span class="sr-only">Phone: </span>
-              {{ site.data.contact.phone }}
-            </a>
-          </p>
-          {% endif %}
-          
-          {% if site.data.contact.office %}
-          <p class="office-location">
-            <span class="sr-only">Office: </span>
-            {{ site.data.contact.office }}
-          </p>
-          {% endif %}
-        </div>
-      </div>
 
-      <!-- Academic Profiles -->
+      <!-- Academic Profiles (Horizontal Layout) -->
       <div class="footer-section">
         <h3>Academic Profiles</h3>
-        <div class="academic-links">
+        <div class="academic-links academic-links-horizontal">
           {% if site.orcid %}
           <a href="https://orcid.org/{{ site.orcid }}" 
              class="academic-link"
@@ -48,7 +17,6 @@
             ORCID
           </a>
           {% endif %}
-          
           {% if site.github_username %}
           <a href="https://github.com/{{ site.github_username }}" 
              class="academic-link"
@@ -59,7 +27,6 @@
             GitHub
           </a>
           {% endif %}
-          
           {% if site.data.profile.google_scholar %}
           <a href="{{ site.data.profile.google_scholar }}" 
              class="academic-link"
@@ -70,7 +37,6 @@
             Google Scholar
           </a>
           {% endif %}
-          
           {% if site.data.profile.researchgate %}
           <a href="{{ site.data.profile.researchgate }}" 
              class="academic-link"
@@ -84,28 +50,6 @@
         </div>
       </div>
 
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <ul class="footer-links">
-            <li><a href="{{ '/research/' | relative_url }}">Research</a></li>
-            <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-            <li><a href="{{ '/students/' | relative_url }}">Students</a></li>
-            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-            {% if site.data.files.cv %}
-            <li>
-              <a href="{{ site.data.files.cv | relative_url }}" 
-                 target="_blank"
-                 rel="noopener"
-                 aria-label="Download CV (PDF, opens in new window)">
-                CV (PDF)
-              </a>
-            </li>
-            {% endif %}
-          </ul>
-        </nav>
-      </div>
     </div>
 
     <!-- Copyright and Site Info -->
@@ -201,10 +145,36 @@
   }
 }
 
-.academic-links {
+.academic-links-horizontal {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+}
+@media (max-width: 600px) {
+  .academic-links-horizontal {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+/* Allow links to shrink if needed */
+.academic-links-horizontal .academic-link {
+  flex-shrink: 1;
+  min-width: 0;
+  white-space: nowrap;
+}
+}
+@media (max-width: 600px) {
+  .academic-links-horizontal {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
 }
 
 .academic-link {
