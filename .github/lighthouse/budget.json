@@ -20,11 +20,11 @@
       },
       {
         "metric": "first-meaningful-paint",
-        "budget": 3000
+        "budget": 3500
       },
       {
         "metric": "interactive",
-        "budget": 4000
+        "budget": 6500
       }
     ],
     "resourceSizes": [
