@@ -6,23 +6,23 @@ research_domains:
   - name: "Seismic Interferometry"
     category: "methodology"
     description: "Development and application of seismic interferometry methods for subsurface imaging and monitoring"
-    keywords: ["ambient noise", "Green's functions", "cross-correlation", "virtual sources"]
+    keywords: ["ambient noise", "Green's functions", "cross-correlation", "virtual sources"," time-lapse monitoring"]
     proficiency: "expert"
-    years_experience: 8
+    years_experience: 15+
     
   - name: "Environmental Seismology"
     category: "application"
-    description: "Using seismic methods to monitor environmental changes and natural hazards"
-    keywords: ["monitoring", "environmental changes", "subsurface characterization", "hazard assessment"]
+    description: "Using seismic methods to monitor environmental changes and natural hazards at the Earth's surface"
+    keywords: ["monitoring", "environmental changes", "subsurface characterization", "hazard assessment", "cryosphere", "fluvial systems", "atmoshphere"]
     proficiency: "expert"
-    years_experience: 6
+    years_experience: 10+
     
   - name: "Volcano Seismology"
     category: "application"
     description: "Seismic analysis methods for volcanic monitoring and hazard assessment"
     keywords: ["volcanic monitoring", "eruption forecasting", "seismic signals", "hazard mitigation"]
     proficiency: "advanced"
-    years_experience: 5
+    years_experience: 8+
     
   - name: "Signal Processing"
     category: "methodology"

@@ -4,8 +4,8 @@
 # Core Identity
 name: "Dylan Mikesell"
 title: "Research Geophysicist"
-affiliation: "Boise State University"
-department: "Geosciences Department"
+affiliation: "Norwegian Geotechnical Institute (NGI)"
+department: "Remote Sensing and Geophysics"
 position: "Assistant Professor"
 
 # Research Identity
@@ -20,7 +20,7 @@ expertise_areas:
   - "Seismic interferometry"
   - "Array processing"
   - "Time series analysis"
-  - "Machine learning for geophysics"
+  - "Co-seismic ionosphere signals"
   - "Field instrumentation"
   - "Data visualization"
 
@@ -31,9 +31,8 @@ bio_summary: |
   developing innovative methods to monitor subsurface changes using continuous 
   seismic recordings and advanced signal processing techniques.
   
-  I am currently a research scientist at Norwegian Geotechnical Institute (NGI), where 
-  my work bridges from fundamental seismology to practical applications in environmental
-  monitoring and subsurface characterization. I am currently focusing on improving near-surface 
+  At Norwegian Geotechnical Institute (NGI) my work bridges from fundamental seismology to practical applications in environmental
+  monitoring and subsurface characterization. I am currently focused on improving near-surface 
   seismic methods for geotechnical and environmental applications, as well as investigations into
   space resource utilization and signals in Earth's ionosphere from seismic sources at Earth's surface.
 
@@ -85,5 +84,5 @@ key_achievements:
 
 # Professional Status
 status: "active" # active, emeritus, visiting
-availability: "accepting_students" # accepting_students, not_accepting, limited
+availability: "not_accepting" # accepting_students, not_accepting, limited
 last_updated: "2025-01-20"

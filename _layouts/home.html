@@ -21,22 +21,6 @@ layout: default
     </div>
   </div>
 
-  <!-- Expertise Preview -->
-  {% if site.data.expertise %}
-  <section class="expertise-preview" aria-labelledby="expertise-heading">
-    <div class="container">
-      <h2 id="expertise-heading">Research Areas</h2>
-      {% include expertise-list.html limit=6 %}
-      <div class="text-center">
-        <a href="{{ '/research/' | relative_url }}" class="btn btn-outline">
-          View All Research
-          <span class="sr-only">areas and projects</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  {% endif %}
-
   <!-- Recent Updates -->
   {% if site.posts.size > 0 %}
   <section class="recent-updates" aria-labelledby="updates-heading">
