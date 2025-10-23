@@ -24,15 +24,11 @@ jobs:
           
       - name: Install axe-core CLI
         run: npm install -g @axe-core/cli
-        
-      - name: Wait for deployment
-        uses: lewagon/wait-on-check-action@v1.3.1
-        if: github.event_name == 'push'
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'deploy'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
+          
+      - name: Wait for site to be available
+        run: |
+          echo "Waiting for site to be deployed..."
+          sleep 30
           
       - name: Run axe accessibility tests
         run: |

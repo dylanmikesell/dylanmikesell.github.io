@@ -64,6 +64,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
+      - name: Wait for deployment to be live
+        run: |
+          echo "Waiting for GitHub Pages to be fully deployed..."
+          sleep 60
+          
       - name: Lighthouse CI
         uses: treosh/lighthouse-ci-action@v10
         with:
@@ -72,8 +77,8 @@ jobs:
             https://dylanmikesell.github.io/about/
             https://dylanmikesell.github.io/research/
           budgetPath: .github/lighthouse/budget.json
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+          uploadArtifacts: false
+          temporaryPublicStorage: false
           
       - name: Performance Budget Check
         run: |

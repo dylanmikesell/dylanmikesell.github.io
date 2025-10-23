@@ -16,15 +16,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Wait for deployment
-        uses: lewagon/wait-on-check-action@v1.3.1
-        if: github.event_name == 'push'
-        with:
-          ref: ${{ github.ref }}
-          check-name: 'deploy'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
+          
+      - name: Wait for site to be available
+        run: |
+          echo "Waiting for site to be deployed..."
+          sleep 30
           
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v10
@@ -35,8 +31,8 @@ jobs:
             https://dylanmikesell.github.io/research/
             https://dylanmikesell.github.io/contact/
           budgetPath: .github/lighthouse/budget.json
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+          uploadArtifacts: false
+          temporaryPublicStorage: false
           
       - name: Check Performance Thresholds
         run: |
