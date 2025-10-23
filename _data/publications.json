@@ -1,6 +1,6 @@
 {
-  "last_updated": "2025-10-20T06:17:36Z",
-  "total_count": 51,
+  "last_updated": "2025-10-23T08:33:25Z",
+  "total_count": 50,
   "publications": [
     {
       "title": "Distributed chemical sensing: An unexplored frontier in urban, industrial, and environmental monitoring",
@@ -75,6 +75,18 @@
       "bibcode": "2024SeiRL..95.2637C"
     },
     {
+      "title": "Propagating speedups during quiescence escalate to the 2020-2021 surge of Sít' Kusá, southeast Alaska",
+      "authors": "Liu, Jukes, Enderlin, Ellyn M., Bartholomaus, Timothy C., Terleth, Yoram, Mikesell, Thomas Dylan, Beaud, Flavien",
+      "venue": "Journal of Glaciology",
+      "year": "2024",
+      "citations": 4,
+      "doi": "10.1017/jog.2023.99",
+      "abstract": "We use satellite image processing techniques to measure surface elevation and velocity changes on a temperate surging glacier, Sít' Kusá, throughout its entire 2013-2021 surge cycle. We present detailed records of its dynamic changes during quiescence (2013-2019) and its surge progression (2020-2021). Throughout quiescence, we observe order-of-magnitude speedups that propagate down-glacier seasonally from the glacier's upper northern tributary, above a steep icefall, into the reservoir zone for the surging portion of the glacier. The speedups initiate in fall and gradually accelerate through winter until they peak in late spring, ~1 − 2 months after the onset of melt. Propagation distance of the speedups controls the distribution of mass accumulation in the reservoir zone prior to the surge. Furthermore, the intensity and propagation distance of each year's speedup is correlated with the positive degree day sum from the preceding melt season, suggesting that winter melt storage drives the seasonal speedups. We demonstrate that the speedups are kinematically similar to the 2020-2021 surge, differing mainly in that the surge propagates past the dynamic balance line at the lower limit of the reservoir zone, likely triggered by the exceedance of a tipping point in mass accumulation and basal enthalpy in the reservoir zone.",
+      "keywords": "",
+      "type": "article",
+      "bibcode": "2024JGlac..70E..57L"
+    },
+    {
       "title": "Geotechnical laboratory testing of lunar simulants and the importance of standardization",
       "authors": "Quinteros, V. Santiago, Mikesell, Thomas Dylan, Griffiths, Luke, Jerves, Alex X.",
       "venue": "Icarus",
@@ -91,24 +103,12 @@
       "authors": "Terleth, Yoram, Bartholomaus, Timothy C., Liu, Jukes, Beaud, Flavien, Mikesell, Thomas Dylan, Enderlin, Ellyn Mary",
       "venue": "Journal of Glaciology",
       "year": "2024",
-      "citations": 2,
+      "citations": 3,
       "doi": "10.1017/jog.2024.38",
       "abstract": "Glacier surges are opportunities to study large amplitude changes in ice velocities and accompanying links to subglacial hydrology. Although the surge phase is generally explained as a disruption in the glacier's ability to drain water from the bed, the extent and duration of this disruption remain difficult to observe. Here we present a combination of in situ and remotely sensed observations of subglacial water discharge and evacuation during the latter half of an active surge and subsequent quiescent period. Our data reveal intermittently efficient subglacial drainage prior to surge termination, showing that glacier surges can persist in the presence of channel-like subglacial drainage and that successive changes in subglacial drainage efficiency can modulate active phase ice dynamics at timescales shorter than the surge cycle. Our observations favor an explanation of fast ice flow sustained through an out-of-equilibrium drainage system and a basal water surplus rather than binary switching between states in drainage efficiency.",
       "keywords": "",
       "type": "article",
       "bibcode": "2024JGlac..70E..29T"
-    },
-    {
-      "title": "Propagating speedups during quiescence escalate to the 2020-2021 surge of Sít' Kusá, southeast Alaska",
-      "authors": "Liu, Jukes, Enderlin, Ellyn M., Bartholomaus, Timothy C., Terleth, Yoram, Mikesell, Thomas Dylan, Beaud, Flavien",
-      "venue": "Journal of Glaciology",
-      "year": "2024",
-      "citations": 3,
-      "doi": "10.1017/jog.2023.99",
-      "abstract": "We use satellite image processing techniques to measure surface elevation and velocity changes on a temperate surging glacier, Sít' Kusá, throughout its entire 2013-2021 surge cycle. We present detailed records of its dynamic changes during quiescence (2013-2019) and its surge progression (2020-2021). Throughout quiescence, we observe order-of-magnitude speedups that propagate down-glacier seasonally from the glacier's upper northern tributary, above a steep icefall, into the reservoir zone for the surging portion of the glacier. The speedups initiate in fall and gradually accelerate through winter until they peak in late spring, ~1 − 2 months after the onset of melt. Propagation distance of the speedups controls the distribution of mass accumulation in the reservoir zone prior to the surge. Furthermore, the intensity and propagation distance of each year's speedup is correlated with the positive degree day sum from the preceding melt season, suggesting that winter melt storage drives the seasonal speedups. We demonstrate that the speedups are kinematically similar to the 2020-2021 surge, differing mainly in that the surge propagates past the dynamic balance line at the lower limit of the reservoir zone, likely triggered by the exceedance of a tipping point in mass accumulation and basal enthalpy in the reservoir zone.",
-      "keywords": "",
-      "type": "article",
-      "bibcode": "2024JGlac..70E..57L"
     },
     {
       "title": "Remotely imaging seismic ground shaking via large-N infrasound beamforming",
@@ -123,18 +123,6 @@
       "bibcode": "2023ComEE...4..399A"
     },
     {
-      "title": "Optimizing Raman spectral collection for quartz and zircon crystals for elastic thermobarometry",
-      "authors": "Cizina, Mayara F., Mikesell, T. Dylan, Kohn, Matthew J.",
-      "venue": "American Mineralogist",
-      "year": "2023",
-      "citations": 6,
-      "doi": "10.2138/am-2022-8423",
-      "abstract": "Raman spectroscopy is widely used to identify mineral and fluid inclusions in host crystals, as well as to calculate pressure-temperature (P-T) conditions with mineral inclusion elastic thermobarometry, for example quartz-in-garnet barometry (QuiG) and zircon-in-garnet thermometry (ZiG). For thermobarometric applications, P-T precision and accuracy depend crucially on the reproducibility of Raman peak position measurements. In this study, we monitored long-term instrument stability and varied analytical parameters to quantify peak position reproducibility for Raman spectra from quartz and zircon inclusions and reference crystals. Our ultimate goal was to determine the reproducibility of calculated inclusion pressures (\"Pinc\") and entrapment pressures (\"Ptrap\") or temperatures (\"Ttrap\") by quantifying diverse analytical errors, as well as to identify optimal measurement conditions and provide a baseline for interlaboratory comparisons. Most tests emphasized 442 nm (blue) and 532 nm (green) laser sources, although repeated analysis of a quartz inclusion in garnet additionally used a 632.8 nm (red) laser. Power density was varied from &lt;1 to &gt;100 mW and acquisition time from 3 to 270s. A correction is proposed to suppress interference on the ~206 cm-1 peak in quartz spectra by a broad nearby (~220 cm-1) peak in garnet spectra. Rapid peak drift up to 1 cm-1/h occurred after powering the laser source, followed by minimal drift (&lt;0.2 cm-1/h) for several hours thereafter. However, abrupt shifts in peak positions as large as 2-3 cm-1 sometimes occurred within periods of minutes, commonly either positively or negatively correlated to changes in room temperature. An external Hg-emission line (fluorescent light) can be observed in spectra collected with the green laser and shows highly correlated but attenuated directional shifts compared to quartz and zircon peaks. Varying power density and acquisition time did not affect Raman peak positions of either quartz or zircon grains, possibly because power densities at the levels of inclusions were low. However, some zircon inclusions were damaged at higher power levels of the blue laser source, likely because of laser-induced heating. Using a combination of 1, 2, or 3 peak positions for the ~128, ~206, and ~464 cm-1 peaks in quartz to calculate Pinc and Ptrap showed that use of the blue laser source results in the most reproducible Ptrap values for all methods (0.59 to 0.68 GPa at an assumed temperature of 450 °C), with precisions for a single method as small as ±0.03 GPa (2σ). Using the green and red lasers, some methods of calculating Ptrap produce nearly identical estimates as the blue laser with similarly good precision (±0.02 GPa for green laser, ±0.03 GPa for red laser). However, using 1- and 2-peak methods to calculate Ptrap can yield values that range from 0.52 ± 0.06 to 0.93 ± 0.16 GPa for the green laser, and 0.53 ± 0.08 GPa to 1.00 ± 0.45 GPa for the red laser. Semiquantitative calculations for zircon, assuming a typical error of ±0.25 cm-1 in the position of the ~1008 cm-1 peak, imply reproducibility in temperature (at an assumed pressure) of approximately ±65 °C. For optimal applications to elastic thermobarometry, analysts should: (1) delay data collection approximately one hour after laser startup, or leave lasers on; (2) collect a Hg-emission line simultaneously with Raman spectra when using a green laser to correct for externally induced shifts in peak positions; (3) correct for garnet interference on the quartz 206 cm-1 peak; and either (4a) use a short wavelength (blue) laser for quartz and zircon crystals for P-T calculations, but use very low-laser power (&lt;12 mW) to avoid overheating and damage or (4b) use either the intermediate wavelength (green; quartz and zircon) or long wavelength (red; zircon) laser for P-T calculations, but restrict calculations to specific methods. Implementation of our recommendations should optimize reproducibility for elastic geothermobarometry, especially QuiG barometry and ZiG thermometry.",
-      "keywords": "",
-      "type": "article",
-      "bibcode": "2023AmMin.108..915C"
-    },
-    {
       "title": "Ocean-Ionosphere Disturbances Due To the 15 January 2022 Hunga-Tonga Hunga-Ha'apai Eruption",
       "authors": "Ravanelli, M., Astafyeva, E., Munaibari, E., Rolland, L., Mikesell, T. D.",
       "venue": "Geophysical Research Letters",
@@ -145,6 +133,18 @@
       "keywords": "Hunga Tonga eruption, ionosphere, GNSS, tsunami waves, co-volcanic ionospheric disturbances, air-sea wave",
       "type": "article",
       "bibcode": "2023GeoRL..5001465R"
+    },
+    {
+      "title": "Optimizing Raman spectral collection for quartz and zircon crystals for elastic thermobarometry",
+      "authors": "Cizina, Mayara F., Mikesell, T. Dylan, Kohn, Matthew J.",
+      "venue": "American Mineralogist",
+      "year": "2023",
+      "citations": 6,
+      "doi": "10.2138/am-2022-8423",
+      "abstract": "Raman spectroscopy is widely used to identify mineral and fluid inclusions in host crystals, as well as to calculate pressure-temperature (P-T) conditions with mineral inclusion elastic thermobarometry, for example quartz-in-garnet barometry (QuiG) and zircon-in-garnet thermometry (ZiG). For thermobarometric applications, P-T precision and accuracy depend crucially on the reproducibility of Raman peak position measurements. In this study, we monitored long-term instrument stability and varied analytical parameters to quantify peak position reproducibility for Raman spectra from quartz and zircon inclusions and reference crystals. Our ultimate goal was to determine the reproducibility of calculated inclusion pressures (\"Pinc\") and entrapment pressures (\"Ptrap\") or temperatures (\"Ttrap\") by quantifying diverse analytical errors, as well as to identify optimal measurement conditions and provide a baseline for interlaboratory comparisons. Most tests emphasized 442 nm (blue) and 532 nm (green) laser sources, although repeated analysis of a quartz inclusion in garnet additionally used a 632.8 nm (red) laser. Power density was varied from &lt;1 to &gt;100 mW and acquisition time from 3 to 270s. A correction is proposed to suppress interference on the ~206 cm-1 peak in quartz spectra by a broad nearby (~220 cm-1) peak in garnet spectra. Rapid peak drift up to 1 cm-1/h occurred after powering the laser source, followed by minimal drift (&lt;0.2 cm-1/h) for several hours thereafter. However, abrupt shifts in peak positions as large as 2-3 cm-1 sometimes occurred within periods of minutes, commonly either positively or negatively correlated to changes in room temperature. An external Hg-emission line (fluorescent light) can be observed in spectra collected with the green laser and shows highly correlated but attenuated directional shifts compared to quartz and zircon peaks. Varying power density and acquisition time did not affect Raman peak positions of either quartz or zircon grains, possibly because power densities at the levels of inclusions were low. However, some zircon inclusions were damaged at higher power levels of the blue laser source, likely because of laser-induced heating. Using a combination of 1, 2, or 3 peak positions for the ~128, ~206, and ~464 cm-1 peaks in quartz to calculate Pinc and Ptrap showed that use of the blue laser source results in the most reproducible Ptrap values for all methods (0.59 to 0.68 GPa at an assumed temperature of 450 °C), with precisions for a single method as small as ±0.03 GPa (2σ). Using the green and red lasers, some methods of calculating Ptrap produce nearly identical estimates as the blue laser with similarly good precision (±0.02 GPa for green laser, ±0.03 GPa for red laser). However, using 1- and 2-peak methods to calculate Ptrap can yield values that range from 0.52 ± 0.06 to 0.93 ± 0.16 GPa for the green laser, and 0.53 ± 0.08 GPa to 1.00 ± 0.45 GPa for the red laser. Semiquantitative calculations for zircon, assuming a typical error of ±0.25 cm-1 in the position of the ~1008 cm-1 peak, imply reproducibility in temperature (at an assumed pressure) of approximately ±65 °C. For optimal applications to elastic thermobarometry, analysts should: (1) delay data collection approximately one hour after laser startup, or leave lasers on; (2) collect a Hg-emission line simultaneously with Raman spectra when using a green laser to correct for externally induced shifts in peak positions; (3) correct for garnet interference on the quartz 206 cm-1 peak; and either (4a) use a short wavelength (blue) laser for quartz and zircon crystals for P-T calculations, but use very low-laser power (&lt;12 mW) to avoid overheating and damage or (4b) use either the intermediate wavelength (green; quartz and zircon) or long wavelength (red; zircon) laser for P-T calculations, but restrict calculations to specific methods. Implementation of our recommendations should optimize reproducibility for elastic geothermobarometry, especially QuiG barometry and ZiG thermometry.",
+      "keywords": "",
+      "type": "article",
+      "bibcode": "2023AmMin.108..915C"
     },
     {
       "title": "Atmospheric waves and global seismoacoustic observations of the January 2022 Hunga eruption, Tonga",
@@ -303,6 +303,18 @@
       "bibcode": "2019Atmos..10..443M"
     },
     {
+      "title": "Local, Regional, and Remote Seismo-acoustic Observations of the April 2015 VEI 4 Eruption of Calbuco Volcano, Chile",
+      "authors": "Matoza, Robin S., Fee, David, Green, David N., Le Pichon, Alexis, Vergoz, Julien, Haney, Matthew M., Mikesell, T. Dylan, Franco, Luis, Valderrama, O. Alberto, Kelley, Megan R., McKee, Kathleen, Ceranna, Lars",
+      "venue": "Journal of Geophysical Research (Solid Earth)",
+      "year": "2018",
+      "citations": 40,
+      "doi": "10.1002/2017JB015182",
+      "abstract": "The two major explosive phases of the 22-23 April 2015 eruption of Calbuco volcano, Chile, produced powerful seismicity and infrasound. The eruption was recorded on seismo-acoustic stations out to 1,540 km and on five stations (IS02, IS08, IS09, IS27, and IS49) of the International Monitoring System (IMS) infrasound network at distances from 1,525 to 5,122 km. The remote IMS infrasound stations provide an accurate explosion chronology consistent with the regional and local seismo-acoustic data and with previous studies of lightning and plume observations. We use the IMS network to detect and locate the eruption signals using a brute-force, grid-search, cross-bearings approach. After incorporating azimuth deviation corrections from stratospheric crosswinds using 3-D ray tracing, the estimated source location is 172 km from true. This case study highlights the significant capability of the IMS infrasound network to provide automated detection, characterization, and timing estimates of global explosive volcanic activity. Augmenting the IMS with regional seismo-acoustic networks will dramatically enhance volcanic signal detection, reduce latency, and improve discrimination capability.",
+      "keywords": "Calbuco, eruption, infrasound, seismoacoustics, explosive volcanism, remote detection",
+      "type": "article",
+      "bibcode": "2018JGRB..123.3814M"
+    },
+    {
       "title": "Constraining plant functional types in a semi-arid ecosystem with waveform lidar",
       "authors": "Ilangakoon, Nayani T., Glenn, Nancy F., Dashti, Hamid, Painter, Thomas H., Mikesell, T. Dylan, Spaete, Lucas P., Mitchell, Jessica J., Shannon, Kyle",
       "venue": "Remote Sensing of Environment",
@@ -327,18 +339,6 @@
       "bibcode": "2018BuSSA.108.1794L"
     },
     {
-      "title": "Local, Regional, and Remote Seismo-acoustic Observations of the April 2015 VEI 4 Eruption of Calbuco Volcano, Chile",
-      "authors": "Matoza, Robin S., Fee, David, Green, David N., Le Pichon, Alexis, Vergoz, Julien, Haney, Matthew M., Mikesell, T. Dylan, Franco, Luis, Valderrama, O. Alberto, Kelley, Megan R., McKee, Kathleen, Ceranna, Lars",
-      "venue": "Journal of Geophysical Research (Solid Earth)",
-      "year": "2018",
-      "citations": 40,
-      "doi": "10.1002/2017JB015182",
-      "abstract": "The two major explosive phases of the 22-23 April 2015 eruption of Calbuco volcano, Chile, produced powerful seismicity and infrasound. The eruption was recorded on seismo-acoustic stations out to 1,540 km and on five stations (IS02, IS08, IS09, IS27, and IS49) of the International Monitoring System (IMS) infrasound network at distances from 1,525 to 5,122 km. The remote IMS infrasound stations provide an accurate explosion chronology consistent with the regional and local seismo-acoustic data and with previous studies of lightning and plume observations. We use the IMS network to detect and locate the eruption signals using a brute-force, grid-search, cross-bearings approach. After incorporating azimuth deviation corrections from stratospheric crosswinds using 3-D ray tracing, the estimated source location is 172 km from true. This case study highlights the significant capability of the IMS infrasound network to provide automated detection, characterization, and timing estimates of global explosive volcanic activity. Augmenting the IMS with regional seismo-acoustic networks will dramatically enhance volcanic signal detection, reduce latency, and improve discrimination capability.",
-      "keywords": "Calbuco, eruption, infrasound, seismoacoustics, explosive volcanism, remote detection",
-      "type": "article",
-      "bibcode": "2018JGRB..123.3814M"
-    },
-    {
       "title": "Examining the interior of Llaima Volcano with receiver functions",
       "authors": "Bishop, J. W., Lees, J. M., Biryol, C. B., Mikesell, T. D., Franco, L.",
       "venue": "Journal of Volcanology and Geothermal Research",
@@ -349,18 +349,6 @@
       "keywords": "Southern Andes, Crustal structure, Receiver functions, Volcano imaging, Llaima Volcano",
       "type": "article",
       "bibcode": "2018JVGR..352....1B"
-    },
-    {
-      "title": "Arctic Deep Water Ferromanganese-Oxide Deposits Reflect the Unique Characteristics of the Arctic Ocean",
-      "authors": "Hein, James R., Konstantinova, Natalia, Mikesell, Mariah, Mizell, Kira, Fitzsimmons, Jessica N., Lam, Phoebe J., Jensen, Laramie T., Xiang, Yang, Gartman, Amy, Cherkashov, Georgy, Hutchinson, Deborah R., Till, Claire P.",
-      "venue": "Geochemistry, Geophysics, Geosystems",
-      "year": "2017",
-      "citations": 54,
-      "doi": "10.1002/2017GC007186",
-      "abstract": "Little is known about marine mineral deposits in the Arctic Ocean, an ocean dominated by continental shelf and basins semi-closed to deep-water circulation. Here, we present data for ferromanganese crusts and nodules collected from the Amerasia Arctic Ocean in 2008, 2009, and 2012 (HLY0805, HLY0905, and HLY1202). We determined mineral and chemical compositions of the crusts and nodules and the onset of their formation. Water column samples from the GEOTRACES program were analyzed for dissolved and particulate scandium concentrations, an element uniquely enriched in these deposits. The Arctic crusts and nodules are characterized by unique mineral and chemical compositions with atypically high growth rates, detrital contents, Fe/Mn ratios, and low Si/Al ratios, compared to deposits found elsewhere. High detritus reflects erosion of submarine outcrops and North America and Siberia cratons, transport by rivers and glaciers to the sea, and distribution by sea ice, brines, and currents. Uniquely high Fe/Mn ratios are attributed to expansive continental shelves, where diagenetic cycling releases Fe to bottom waters, and density flows transport shelf bottom water to the open Arctic Ocean. Low Mn contents reflect the lack of a mid-water oxygen minimum zone that would act as a reservoir for dissolved Mn. The potential host phases and sources for elements with uniquely high contents are discussed with an emphasis on scandium. Scandium sorption onto Fe oxyhydroxides and Sc-rich detritus account for atypically high scandium contents. The opening of Fram Strait in the Miocene and ventilation of the deep basins initiated Fe-Mn crust growth ∼15 Myr ago.",
-      "keywords": "Arctic Ocean, ferromanganese deposits, rare metals, scandium, paleoceanography, genetic model",
-      "type": "article",
-      "bibcode": "2017GGG....18.3771H"
     },
     {
       "title": "Acoustic and Seismic Fields of Hydraulic Jumps at Varying Froude Numbers",
@@ -471,18 +459,6 @@
       "bibcode": "2015JAG...112..206D"
     },
     {
-      "title": "Solving large tomographic linear systems: size reduction and error estimation",
-      "authors": "Voronin, Sergey, Mikesell, Dylan, Slezak, Inna, Nolet, Guust",
-      "venue": "Geophysical Journal International",
-      "year": "2014",
-      "citations": 4,
-      "doi": "10.1093/gji/ggu242",
-      "abstract": "We present a new approach to reduce a sparse, linear system of equations associated with tomographic inverse problems. We begin by making a modification to the commonly used compressed sparse-row format, whereby our format is tailored to the sparse structure of finite-frequency (volume) sensitivity kernels in seismic tomography. Next, we cluster the sparse matrix rows to divide a large matrix into smaller subsets representing ray paths that are geographically close. Singular value decomposition of each subset allows us to project the data onto a subspace associated with the largest eigenvalues of the subset. After projection we reject those data that have a signal-to-noise ratio (SNR) below a chosen threshold. Clustering in this way assures that the sparse nature of the system is minimally affected by the projection. Moreover, our approach allows for a precise estimation of the noise affecting the data while also giving us the ability to identify outliers. We illustrate the method by reducing large matrices computed for global tomographic systems with cross-correlation body wave delays, as well as with surface wave phase velocity anomalies. For a massive matrix computed for 3.7 million Rayleigh wave phase velocity measurements, imposing a threshold of 1 for the SNR, we condensed the matrix size from 1103 to 63 Gbyte. For a global data set of multiple-frequency P wave delays from 60 well-distributed deep earthquakes we obtain a reduction to 5.9 per cent. This type of reduction allows one to avoid loss of information due to underparametrizing models. Alternatively, if data have to be rejected to fit the system into computer memory, it assures that the most important data are preserved.",
-      "keywords": "Inverse theory, Body waves, Surface waves and free oscillations, Computational seismology",
-      "type": "article",
-      "bibcode": "2014GeoJI.199..276V"
-    },
-    {
       "title": "The spatial cross-correlation method for dispersive surface waves",
       "authors": "Lamb, Andrew P., van Wijk, Kasper, Liberty, Lee M., Mikesell, T. Dylan",
       "venue": "Geophysical Journal International",
@@ -493,6 +469,18 @@
       "keywords": "Interferometry, Hydrothermal systems, Surface waves and free oscillations, North America",
       "type": "article",
       "bibcode": "2014GeoJI.199....1L"
+    },
+    {
+      "title": "Solving large tomographic linear systems: size reduction and error estimation",
+      "authors": "Voronin, Sergey, Mikesell, Dylan, Slezak, Inna, Nolet, Guust",
+      "venue": "Geophysical Journal International",
+      "year": "2014",
+      "citations": 4,
+      "doi": "10.1093/gji/ggu242",
+      "abstract": "We present a new approach to reduce a sparse, linear system of equations associated with tomographic inverse problems. We begin by making a modification to the commonly used compressed sparse-row format, whereby our format is tailored to the sparse structure of finite-frequency (volume) sensitivity kernels in seismic tomography. Next, we cluster the sparse matrix rows to divide a large matrix into smaller subsets representing ray paths that are geographically close. Singular value decomposition of each subset allows us to project the data onto a subspace associated with the largest eigenvalues of the subset. After projection we reject those data that have a signal-to-noise ratio (SNR) below a chosen threshold. Clustering in this way assures that the sparse nature of the system is minimally affected by the projection. Moreover, our approach allows for a precise estimation of the noise affecting the data while also giving us the ability to identify outliers. We illustrate the method by reducing large matrices computed for global tomographic systems with cross-correlation body wave delays, as well as with surface wave phase velocity anomalies. For a massive matrix computed for 3.7 million Rayleigh wave phase velocity measurements, imposing a threshold of 1 for the SNR, we condensed the matrix size from 1103 to 63 Gbyte. For a global data set of multiple-frequency P wave delays from 60 well-distributed deep earthquakes we obtain a reduction to 5.9 per cent. This type of reduction allows one to avoid loss of information due to underparametrizing models. Alternatively, if data have to be rejected to fit the system into computer memory, it assures that the most important data are preserved.",
+      "keywords": "Inverse theory, Body waves, Surface waves and free oscillations, Computational seismology",
+      "type": "article",
+      "bibcode": "2014GeoJI.199..276V"
     },
     {
       "title": "Using SVD for improved interferometric Green's function retrieval",
@@ -531,18 +519,6 @@
       "bibcode": "2012GeoJI.191..189H"
     },
     {
-      "title": "Monitoring glacier surface seismicity in time and space using Rayleigh waves",
-      "authors": "Mikesell, T. D., van Wijk, K., Haney, M. M., Bradford, J. H., Marshall, H. P., Harper, J. T.",
-      "venue": "Journal of Geophysical Research (Earth Surface)",
-      "year": "2012",
-      "citations": 44,
-      "doi": "10.1029/2011JF002259",
-      "abstract": "Sliding glaciers and brittle ice failure generate seismic body and surface wave energy characteristic to the source mechanism. Here we analyze continuous seismic recordings from an array of nine short-period passive seismometers located on Bench Glacier, Alaska (USA) (61.033°N, 145.687°W). We focus on the arrival-time and amplitude information of the dominant Rayleigh wave phase. Over a 46-hour period we detect thousands of events using a cross-correlation based event identification method. Travel-time inversion of a subset of events (7% of the total) defines an active crevasse, propagating more than 200 meters in three hours. From the Rayleigh wave amplitudes, we estimate the amount of volumetric opening along the crevasse as well as an average bulk attenuation (Q¯ = 42) for the ice in this part of the glacier. With the remaining icequake signals we establish a diurnal periodicity in seismicity, indicating that surface run-off and subglacial water pressure changes likely control the triggering of these surface events. Furthermore, we find that these events are too weak (i.e., too noisy) to locate individually. However, stacking individual events increases the signal-to-noise ratio of the waveforms, implying that these periodic sources are effectively stationary during the recording period.",
-      "keywords": "attenuation, icequakes, inversion, passive seismology, Cryosphere: Glaciers, Cryosphere: Glaciology (1621, 1827, 1863), Seismology: Surface waves and free oscillations, Seismology: Seismic instruments and networks (0935, 3025)",
-      "type": "article",
-      "bibcode": "2012JGRF..117.2020M"
-    },
-    {
       "title": "Scanning for velocity anomalies in the crust and mantle with diffractions from the core-mantle boundary",
       "authors": "Ruigrok, Elmer, Mikesell, T. Dylan, van Wijk, Kasper",
       "venue": "Geophysical Research Letters",
@@ -553,6 +529,18 @@
       "keywords": "Exploration Geophysics: Seismic methods (3025, 7294), Seismology: Body waves, Seismology: Mantle (1212, 1213, 8124), Seismology: Lithosphere (1236), Tectonophysics: Dynamics of lithosphere and mantle: general (1213)",
       "type": "article",
       "bibcode": "2012GeoRL..3911301R"
+    },
+    {
+      "title": "Monitoring glacier surface seismicity in time and space using Rayleigh waves",
+      "authors": "Mikesell, T. D., van Wijk, K., Haney, M. M., Bradford, J. H., Marshall, H. P., Harper, J. T.",
+      "venue": "Journal of Geophysical Research (Earth Surface)",
+      "year": "2012",
+      "citations": 44,
+      "doi": "10.1029/2011JF002259",
+      "abstract": "Sliding glaciers and brittle ice failure generate seismic body and surface wave energy characteristic to the source mechanism. Here we analyze continuous seismic recordings from an array of nine short-period passive seismometers located on Bench Glacier, Alaska (USA) (61.033°N, 145.687°W). We focus on the arrival-time and amplitude information of the dominant Rayleigh wave phase. Over a 46-hour period we detect thousands of events using a cross-correlation based event identification method. Travel-time inversion of a subset of events (7% of the total) defines an active crevasse, propagating more than 200 meters in three hours. From the Rayleigh wave amplitudes, we estimate the amount of volumetric opening along the crevasse as well as an average bulk attenuation (Q¯ = 42) for the ice in this part of the glacier. With the remaining icequake signals we establish a diurnal periodicity in seismicity, indicating that surface run-off and subglacial water pressure changes likely control the triggering of these surface events. Furthermore, we find that these events are too weak (i.e., too noisy) to locate individually. However, stacking individual events increases the signal-to-noise ratio of the waveforms, implying that these periodic sources are effectively stationary during the recording period.",
+      "keywords": "attenuation, icequakes, inversion, passive seismology, Cryosphere: Glaciers, Cryosphere: Glaciology (1621, 1827, 1863), Seismology: Surface waves and free oscillations, Seismology: Seismic instruments and networks (0935, 3025)",
+      "type": "article",
+      "bibcode": "2012JGRF..117.2020M"
     },
     {
       "title": "Seismic refraction interferometry with a semblance analysis on the crosscorrelation gather",

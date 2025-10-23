@@ -5,7 +5,13 @@
 set -e
 
 # Configuration - Use environment variables for security
-API_TOKEN="${ADS_TOKEN:-}"
+# Try to load token from .ads-token file if not set in environment
+if [ -z "$ADS_TOKEN" ] && [ -f ".ads-token" ]; then
+    API_TOKEN=$(cat .ads-token | tr -d '[:space:]')
+else
+    API_TOKEN="${ADS_TOKEN:-}"
+fi
+
 LIBRARY_ID="${ADS_LIBRARY_ID:-2xPvCd9BSHKpZtiqPsgexQ}"  # Safe to include library IDs
 GRANTS_ID="${ADS_GRANTS_ID:-8wXghzfWQOCJg-8sWjsnUA}"   # Safe to include grants IDs
 ADS_API_URL="https://api.adsabs.harvard.edu/v1"
@@ -17,8 +23,10 @@ echo "=================================="
 
 # Validate API token is provided
 if [ -z "$API_TOKEN" ]; then
-    echo "❌ Error: ADS_TOKEN environment variable is required"
-    echo "Please set your NASA ADS API token: export ADS_TOKEN=your_token_here"
+    echo "❌ Error: ADS API token is required"
+    echo "Please either:"
+    echo "  1. Create a .ads-token file with your token: echo 'your_token_here' > .ads-token"
+    echo "  2. Set the ADS_TOKEN environment variable: export ADS_TOKEN=your_token_here"
     exit 1
 fi
 

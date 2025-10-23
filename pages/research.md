@@ -1,20 +1,18 @@
 ---
 layout: page
 title: "Research"
-subtitle: "Current Projects and Research Interests"
-description: "Overview of Dylan Mikesell's current research projects, methodological developments, and contributions to computational geophysics and environmental monitoring."
+# subtitle: "Current Projects and Research Interests"
+# description: "Overview of Dylan Mikesell's current research projects, methodological developments, and contributions to computational geophysics and environmental monitoring."
 permalink: /research/
 ---
 
 
-## Research Overview
+<!-- ## Research Overview -->
 
 My research focuses on developing new ways to listen to the Earth and create images of the world beneath our feet. Using techniques similar to a medical ultrasound, I analyze sound and seismic waves to understand the processes that shape our planet. This work has a wide range of applications, from monitoring natural hazards like earthquakes, volcanoes, and landslides, to tracking the health of glaciers and ice sheets. By interpreting these subtle vibrations, my research helps us better understand environmental changes, improve the safety of critical infrastructure like dams, and even develop new methods for exploring other planets like the Moon and Mars.
 
 
-
-
-### Core Research Areas
+## Core Research Areas
 
 **Cryosphere Sciences**
 
@@ -44,7 +42,7 @@ Underpinning all of these areas is a focus on developing innovative methods to a
 
 
 
-## Current Research Program
+<!-- ## Current Research Program
 
 My research focuses on developing and applying innovative seismic analysis methods to understand Earth's structure and monitor temporal changes. The program spans from fundamental methodological development to practical applications in environmental monitoring and natural hazard assessment.
 
@@ -108,9 +106,9 @@ Applying artificial intelligence to geophysical problems:
 - Deep learning for seismic signal recognition
 - Automated quality control and data cleaning
 - Pattern recognition in continuous data streams
-- Predictive modeling for monitoring applications
+- Predictive modeling for monitoring applications -->
 
-## Research Methodologies
+<!-- ## Research Methodologies
 
 ### Field Work and Data Acquisition
 
@@ -142,9 +140,9 @@ Creating tools for the research community:
 - MATLAB and Python algorithm development
 - Open-source package contributions
 - Documentation and tutorial development
-- Code sharing and collaborative development
+- Code sharing and collaborative development -->
 
-## Collaborative Research
+<!-- ## Collaborative Research
 
 ### International Collaborations
 
@@ -162,19 +160,11 @@ Working with researchers in related fields:
 - Climate science and environmental monitoring
 - Hydrology and water resource management
 - Ecology and ecosystem monitoring
-- Engineering and infrastructure assessment
+- Engineering and infrastructure assessment -->
 
-## Collaboration Opportunities
+<!-- ## Research Impact and Applications -->
 
-I welcome collaboration with students, postdocs, visiting researchers, and industry partners. Current opportunities are listed on the [Collaborators & Opportunities](/collaborators/) page. If you are interested in joining a project or proposing a new collaboration, please reach out via the contact form.
-
-{% for collab in site.data.collaborators.collaborators %}
-  {% include opportunity-card.html collab=collab %}
-{% endfor %}
-
-## Research Impact and Applications
-
-### Methodological Contributions
+<!-- ### Methodological Contributions
 
 **Technical Innovations**  
 Advancing the state of the art in:
@@ -190,22 +180,22 @@ Research that addresses societal needs:
 - Natural hazard monitoring and early warning
 - Environmental change detection and assessment
 - Infrastructure monitoring and maintenance
-- Climate change impact studies
+- Climate change impact studies -->
 
-## Future Directions
+<!-- ## Future Directions -->
 
-### Emerging Technologies
+## Emerging Technologies
 
-**Next-Generation Methods**  
+<!-- **Next-Generation Methods**   -->
 Exploring new approaches to geophysical monitoring:
 - Distributed acoustic sensing (DAS) applications
 - Internet of Things (IoT) sensor networks
 - Edge computing for real-time analysis
 - Artificial intelligence and automated interpretation
 
-### Expanding Applications
+## Expanding Applications
 
-**New Research Frontiers**  
+<!-- **New Research Frontiers**   -->
 Extending methods to new application areas:
 - Urban seismology and smart city applications
 - Precision agriculture and soil monitoring

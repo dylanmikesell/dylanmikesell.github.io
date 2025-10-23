@@ -43,23 +43,6 @@
       </div>
       {% endif %}
       
-      <!-- Key Research Areas -->
-      {% if site.data.profile.research_interests %}
-      <div class="research-highlights">
-        <h2 class="sr-only">Primary Research Areas</h2>
-        <div class="research-tags" role="list" aria-label="Research interests">
-          {% for interest in site.data.profile.research_interests limit:4 %}
-          <span class="tag tag-primary" role="listitem">{{ interest }}</span>
-          {% endfor %}
-          {% if site.data.profile.research_interests.size > 4 %}
-          <a href="{{ '/research/' | relative_url }}" class="tag tag-more" aria-label="View all research areas">
-            +{{ site.data.profile.research_interests.size | minus: 4 }} more
-          </a>
-          {% endif %}
-        </div>
-      </div>
-      {% endif %}
-      
       <!-- Call to Action -->
       <div class="profile-actions">
         <a href="{{ '/about/' | relative_url }}" 
@@ -109,7 +92,7 @@
            aria-label="Google Scholar Profile (opens in new window)"
            itemprop="sameAs">
           <span class="link-icon" aria-hidden="true">📚</span>
-          Publications
+          Google Scholar
         </a>
         {% endif %}
       </div>

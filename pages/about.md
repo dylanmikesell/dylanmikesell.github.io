@@ -42,7 +42,7 @@ My approach to research and teaching emphasizes:
 My work has contributed to advances in seismic interferometry methods, environmental monitoring applications, and geophysics analysis tools. Research findings have been published in leading geophysics journals and presented at international conferences. You can learn more about this on my [Publications]({{ '/publications/' | relative_url }}) page.
 
 **Teaching and Mentoring**  
-I am still committed to excellence in undergraduate and graduate education, developing innovative curricula that prepare students for careers in applied geophysics and geospatial data analysis. I still actively mentor graduate students conducting research around the world. You can learn more about this on my [Collaborators]({{ '/collaborators/' | relative_url }}) page.
+I am still committed to excellence in undergraduate and graduate education, developing innovative curricula that prepare students for careers in applied geophysics and geospatial data analysis. I still actively mentor graduate students conducting research around the world. You can [contact me]({{ '/contact/' | relative_url }}) if you are interested in working together.
 
 **Service to the Community**  
 I contribute to the scientific community through peer review, conference organization, and professional society activities. I am committed to promoting diversity and inclusion in the geosciences and supporting early-career researchers.
@@ -57,7 +57,7 @@ I contribute to the scientific community through peer review, conference organiz
 
 ---
 
-*For detailed information about specific research projects, publications, or collaboration opportunities, please see the [Research]({{ '/research/' | relative_url }}), [Publications]({{ '/publications/' | relative_url }}), and [Collaborators]({{ '/collaborators/' | relative_url }}) sections, or [contact me]({{ '/contact/' | relative_url }}) directly.*
+*For detailed information about specific research projects, publications, or collaboration opportunities, please see the [Research]({{ '/research/' | relative_url }}) and [Publications]({{ '/publications/' | relative_url }}) sections, or [contact me]({{ '/contact/' | relative_url }}) directly.*
 
 
 <!-- ## Current Projects

@@ -1,36 +1,47 @@
 ---
 layout: page
 title: "Publications"
-description: "Comprehensive list of research publications, conference presentations, and scholarly contributions in geophysics and related fields"
+description: "Comprehensive list of research publications in geophysics and related fields"
+# description: "Comprehensive list of research publications, conference presentations, and scholarly contributions in geophysics and related fields"
 permalink: /publications/
 navigation_weight: 2
 ---
 
 <div class="publications-page">
-  <!-- Page Header -->
-  <div class="page-header">
-    <h1>{{ page.title }}</h1>
-    <p class="page-description">{{ page.description }}</p>
-  </div>
-
-  <!-- Publication Metrics Summary -->
-  <div class="metrics-summary">
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-value">{{ site.data.metrics.total_publications }}</div>
-        <div class="metric-label">Total Publications</div>
+  <!-- Publication Statistics -->
+  <div class="statistics-section">
+    <h2>Publication Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <strong>Total Publications:</strong> {{ site.data.metrics.total_publications }}
       </div>
-      <div class="metric-card">
-        <div class="metric-value">{{ site.data.metrics.total_citations }}</div>
-        <div class="metric-label">Total Citations</div>
+      <div class="stat-item">
+        <strong>Total Citations:</strong> {{ site.data.metrics.total_citations }}
       </div>
-      <div class="metric-card">
-        <div class="metric-value">{{ site.data.metrics.h_index }}</div>
-        <div class="metric-label">h-index</div>
+      <div class="stat-item">
+        <strong>h-index:</strong> {{ site.data.metrics.h_index }}
       </div>
-      <div class="metric-card">
-        <div class="metric-value">{{ site.data.metrics.recent_publications }}</div>
-        <div class="metric-label">Recent Papers</div>
+      <div class="stat-item">
+        <strong>Years Active:</strong> {{ site.data.metrics.years_active }}
+      </div>
+      <div class="stat-item">
+        <strong>Most Cited Paper:</strong> {{ site.data.metrics.most_cited.citations }} citations
+      </div>
+      <div class="stat-item">
+        <strong>Average Citations per Paper:</strong> 
+        {% assign avg_citations = site.data.metrics.total_citations | divided_by: site.data.metrics.total_publications %}
+        {{ avg_citations }}
+      </div>
+      <div class="stat-item">
+        <strong>Publications Since 2020:</strong>
+        {% assign recent_pubs = 0 %}
+        {% for pub in site.data.publications.publications %}
+          {% assign pub_year = pub.year | plus: 0 %}
+          {% if pub_year >= 2020 %}
+            {% assign recent_pubs = recent_pubs | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {{ recent_pubs }}
       </div>
     </div>
     <div class="last-updated">
@@ -66,30 +77,6 @@ navigation_weight: 2
     </div>
   </div>
 
-  <!-- Featured Publications -->
-  <div class="featured-section">
-    <h2>Featured Publications</h2>
-    <div class="featured-publications">
-      {% assign featured_pubs = site.data.publications.publications | sort: 'citations' | reverse | slice: 0, 5 %}
-      {% for pub in featured_pubs %}
-      <div class="featured-publication">
-        <h4 class="featured-title">{{ pub.title }}</h4>
-        <p class="featured-authors">{{ pub.authors }}</p>
-        <p class="featured-venue">{{ pub.venue }} ({{ pub.year }})</p>
-        <div class="featured-metrics">
-          <span class="citation-badge">{{ pub.citations }} citations</span>
-          {% if pub.doi %}
-          <a href="https://doi.org/{{ pub.doi }}" target="_blank" class="doi-link">DOI</a>
-          {% endif %}
-        </div>
-        {% if pub.abstract and pub.abstract != "" %}
-        <p class="featured-abstract">{{ pub.abstract | truncate: 200 }}</p>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-
   <!-- All Publications List -->
   <div class="publications-section">
     <h2>All Publications ({{ site.data.publications.total_count }})</h2>
@@ -97,62 +84,34 @@ navigation_weight: 2
       {% assign sorted_pubs = site.data.publications.publications | sort: 'year' | reverse %}
       {% for pub in sorted_pubs %}
       <div class="publication-item" data-year="{{ pub.year }}" data-venue="{{ pub.venue | escape }}" data-title="{{ pub.title | escape }}" data-authors="{{ pub.authors | escape }}">
-        <div class="publication-content">
-          <h3 class="publication-title">{{ pub.title }}</h3>
-          <p class="publication-authors">{{ pub.authors }}</p>
-          <div class="publication-details">
-            <span class="publication-venue">{{ pub.venue }}</span>
-            <span class="publication-year">{{ pub.year }}</span>
-            {% if pub.citations > 0 %}
-            <span class="publication-citations">{{ pub.citations }} citations</span>
+        <details class="publication-content">
+          <summary class="publication-title-summary">{{ pub.title }} ({{ pub.year }})</summary>
+          <div class="publication-details-wrapper" style="margin-left: 2rem;">
+            <p class="publication-authors">{{ pub.authors }}</p>
+            <div class="publication-details">
+              <span class="publication-venue">{{ pub.venue }}</span>
+              {% if pub.citations > 0 %}
+              <span class="publication-citations">({{ pub.citations }} citations)</span>
+              {% endif %}
+            </div>
+            {% if pub.doi %}
+            <div class="publication-links">
+              <a href="https://doi.org/{{ pub.doi }}" target="_blank" class="publication-link">DOI</a>
+              {% if pub.bibcode %}
+              <a href="https://ui.adsabs.harvard.edu/abs/{{ pub.bibcode }}" target="_blank" class="publication-link">ADS</a>
+              {% endif %}
+            </div>
+            {% endif %}
+            {% if pub.abstract and pub.abstract != "" %}
+            <details class="publication-abstract">
+              <summary>Abstract</summary>
+              <p>{{ pub.abstract }}</p>
+            </details>
             {% endif %}
           </div>
-          {% if pub.doi %}
-          <div class="publication-links">
-            <a href="https://doi.org/{{ pub.doi }}" target="_blank" class="publication-link">DOI</a>
-            {% if pub.bibcode %}
-            <a href="https://ui.adsabs.harvard.edu/abs/{{ pub.bibcode }}" target="_blank" class="publication-link">ADS</a>
-            {% endif %}
-          </div>
-          {% endif %}
-          {% if pub.abstract and pub.abstract != "" %}
-          <details class="publication-abstract">
-            <summary>Abstract</summary>
-            <p>{{ pub.abstract }}</p>
-          </details>
-          {% endif %}
-        </div>
+        </details>
       </div>
       {% endfor %}
-    </div>
-  </div>
-
-  <!-- Statistics Section -->
-  <div class="statistics-section">
-    <h2>Publication Statistics</h2>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <strong>Years Active:</strong> {{ site.data.metrics.years_active }}
-      </div>
-      <div class="stat-item">
-        <strong>Most Cited Paper:</strong> {{ site.data.metrics.most_cited.citations }} citations
-      </div>
-      <div class="stat-item">
-        <strong>Average Citations per Paper:</strong> 
-        {% assign avg_citations = site.data.metrics.total_citations | divided_by: site.data.metrics.total_publications %}
-        {{ avg_citations }}
-      </div>
-      <div class="stat-item">
-        <strong>Publications Since 2020:</strong>
-        {% assign recent_pubs = 0 %}
-        {% for pub in site.data.publications.publications %}
-          {% assign pub_year = pub.year | plus: 0 %}
-          {% if pub_year >= 2020 %}
-            {% assign recent_pubs = recent_pubs | plus: 1 %}
-          {% endif %}
-        {% endfor %}
-        {{ recent_pubs }}
-      </div>
     </div>
   </div>
 </div>

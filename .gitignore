@@ -20,6 +20,7 @@ package-lock.json
 .env.test.local
 .env.production.local
 .env.production
+.ads-token
 
 # IDE and editor files
 .vscode/settings.json
