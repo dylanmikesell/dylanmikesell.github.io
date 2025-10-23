@@ -1,9 +1,19 @@
 # Contact Information
-# Personal contact details are not publicly shared
+# Personal contact details are not publicly shared by default
 # All inquiries should use the contact form
 
 # Formspree endpoint for contact form
 formspree_endpoint: "https://formspree.io/f/mrbywqla"
+
+# Optional: Uncomment to display email with mobile app integration (mailto: links)
+# email: "your.email@example.com"
+
+# Optional: Uncomment to display phone with mobile app integration (tel: links)
+# phone: "+1-555-123-4567"
+
+# Optional: Office location and hours
+# office: "Building Name, Room 123"
+# office_hours: "By appointment only"
 
 # Social Media Profiles
 social_media:
