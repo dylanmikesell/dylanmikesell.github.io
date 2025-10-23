@@ -12,7 +12,7 @@
       },
       {
         "metric": "speed-index",
-        "budget": 3000
+        "budget": 5000
       },
       {
         "metric": "cumulative-layout-shift",

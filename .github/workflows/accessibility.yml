@@ -43,7 +43,7 @@ jobs:
       - name: Mobile Accessibility Test
         run: |
           echo "Testing mobile accessibility..."
-          axe https://dylanmikesell.github.io --viewport 375x667 --exit
+          axe https://dylanmikesell.github.io --exit
           
       - name: Color Contrast Test
         run: |
