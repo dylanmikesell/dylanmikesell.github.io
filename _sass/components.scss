@@ -26,13 +26,13 @@
   // Primary button
   &.btn-primary {
     color: white;
-    background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
+    background-color: #1b4f72;
+    border-color: #1b4f72;
     
     &:hover,
     &:focus {
-      background-color: var(--color-link-hover);
-      border-color: var(--color-link-hover);
+      background-color: #154360;
+      border-color: #154360;
       color: white;
       text-decoration: none;
     }
@@ -121,13 +121,13 @@
     
     &:hover,
     &:focus {
-      color: var(--color-secondary);
+      color: #1b4f72;
       background-color: var(--color-background-alt);
       text-decoration: none;
     }
     
     &.nav-link-active {
-      color: var(--color-secondary);
+      color: #1b4f72;
       font-weight: 600;
     }
   }
