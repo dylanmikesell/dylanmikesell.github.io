@@ -81,6 +81,9 @@
     "description": "{{ site.description }}"
   }
   </script>
+  
+  <!-- Google Analytics -->
+  {% include google-analytics.html %}
 </head>
 
 <body class="{% if page.layout %}layout-{{ page.layout }}{% endif %}{% if page.class %} {{ page.class }}{% endif %}">

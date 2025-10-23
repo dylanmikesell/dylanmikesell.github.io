@@ -49,7 +49,7 @@ plugins:
 # SEO and Meta
 lang: en-US
 logo: /assets/images/logo.png
-google_analytics: # Will be configured in production
+google_analytics: G-PXTYNB36ST
 
 # Publication data is now managed via static files in _data/
 # To update publications, run: ./sync-ads-data.sh
