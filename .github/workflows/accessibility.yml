@@ -22,8 +22,10 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Install axe-core CLI
-        run: npm install -g @axe-core/cli
+      - name: Install axe-core CLI and browser drivers
+        run: |
+          npm install -g @axe-core/cli
+          npx browser-driver-manager install chrome
           
       - name: Wait for site to be available
         run: |
